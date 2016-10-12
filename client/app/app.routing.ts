@@ -1,13 +1,13 @@
 import { ModuleWithProviders} from '@angular/core'
 import { Routes, RouterModule} from '@angular/router'
 
-import { HeroesComponent } from './heroes.component'
+import { HeroesComponent } from './projects.component'
 import {DashboardComponent} from "./dashboard.component";
-import {HeroDetailComponent} from "./hero-detail.component";
+import {HeroDetailComponent} from "./project-detail.component";
 
 const appRoutes: Routes = [
 	{
-		path: 'heroes',
+		path: 'projects',
 		component: HeroesComponent,
 	},
 	{

@@ -2,8 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import { ActivatedRoute, Params} from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Hero } from './hero';
-import { HeroService } from './hero.service';
+import { Project } from './project';
+import { ProjectService } from './project.service';
 
 @Component({
 	selector: 'my-hero-detail',
@@ -11,19 +11,19 @@ import { HeroService } from './hero.service';
 	styleUrls: ['styles/hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit{
-	hero: Hero;
+	project: Project;
 	
 	ngOnInit(): void {
 		this.route.params.forEach((params: Params) => {
 			let id = +params['id'];
-			this.heroService.getHero(id).then(hero => this.hero = hero)
+			this.projectService.getProject(id).then(project => this.project = project)
 		})
 	}
 	goBack(): void {
 		this.location.back();
 	}
 	constructor(
-		private heroService: HeroService,
+		private projectService: ProjectService,
 	    private route: ActivatedRoute,
 	    private location: Location
 	) {}
