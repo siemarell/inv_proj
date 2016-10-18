@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
-import {ProjectService} from "./project.service";
+import {ProjectsService} from "./projects.service";
 import {Project} from "./project";
 @Component({
 	selector: 'my-dashboard',
@@ -11,13 +11,13 @@ export class DashboardComponent implements OnInit{
 	projects: Project[] = [];
 	
 	constructor(
-		private projectService: ProjectService,
+		private projectService: ProjectsService,
 	    private router: Router
 	) {}
 	
 	ngOnInit(): void {
 		this.projectService.getProjects()
-			.then(heroes => this.projects = heroes.slice(1,5));
+			.then(projects => this.projects = projects);
 	}
 	goToDetail(project: Project):void {
 		let link = ['/detail', project.id]

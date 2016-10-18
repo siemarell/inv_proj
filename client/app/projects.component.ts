@@ -1,19 +1,19 @@
 import {Component, OnInit} from '@angular/core';
 import {Project} from "./project";
-import { ProjectService } from './project.service'
+import { ProjectsService } from './projects.service'
 import { Router } from '@angular/router'
 
 @Component({
     selector: 'my-heroes',
     templateUrl: 'templates/projects.component.html'
 })
-export class ProjectComponent implements OnInit{
+export class ProjectsComponent implements OnInit{
     
     projects: Project[];
     selectedProject: Project;
     
     constructor(
-    	private projectService: ProjectService,
+    	private projectsService: ProjectsService,
         private router: Router
     ){}
     
@@ -22,7 +22,7 @@ export class ProjectComponent implements OnInit{
     }
     
     getProjects(): void{
-        this.projectService.getProjects().then(projects => this.projects = projects);
+        this.projectsService.getProjects().then(projects => this.projects = projects);
     }
     
     onSelect(project: Project): void {
