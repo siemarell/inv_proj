@@ -1,0 +1,35 @@
+<div id="wrapper">
+    <div id="left">
+        <h1>Ивестиционные проекты</h1>
+        <div class="filters-container"></div>
+        <div class="indicators-container"></div>
+        <div class="projects-container"></div>
+        <div *ngFor="let project of projects" (click)="onSelect(project)">
+            <div class="project">
+                <h4 (click)="goToDetail(project)">{{project.name}}</h4>
+                <h6>{{project.description}}</h6>
+            </div>
+        </div>
+    </div>
+    <div id="right">
+        <olmap></olmap>
+    </div>
+    <div id="clear"></div>
+</div>
+<style>
+    #left{
+        width: 40%;
+        height: 98%;
+        border: 1px solid;
+        float: left;
+    }
+    #right{
+        width: 58%;
+        height: 98%;
+        border: 1px solid;
+        float: left;
+    }
+    #clear{
+        clear: both;
+    }
+</style>

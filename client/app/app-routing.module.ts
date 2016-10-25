@@ -7,7 +7,7 @@ import {ProjectDetailComponent} from "./project-detail.component";
 const appRoutes: Routes = [
 	{
 		path: 'projects',
-		component: ProjectsComponent,
+		component: ProjectsComponent
 	},
 	{
 		path: 'dashboard',
@@ -15,8 +15,7 @@ const appRoutes: Routes = [
 	},
 	{
 		path: '',
-		redirectTo: '/dashboard',
-		pathMatch: 'full'
+		component: ProjectsComponent
 	},
 	{
 		path: 'detail/:id',

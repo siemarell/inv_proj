@@ -29,8 +29,8 @@ export class ProjectsComponent implements OnInit{
         this.selectedProject = project;
     }
     
-    goToDetail(): void {
-    	this.router.navigate(['detail', this.selectedProject.id])
+    goToDetail(project: Project): void {
+    	this.router.navigate(['detail', project.id])
     }
 }
 

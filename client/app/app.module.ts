@@ -9,6 +9,7 @@ import {ProjectDetailComponent} from './project-detail.component'
 import {ProjectsComponent} from "./projects.component";
 import {DashboardComponent} from "./dashboard.component";
 import {ProjectsService} from "./projects.service";
+import { OlMap } from "./map.component"
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import {ProjectsService} from "./projects.service";
         AppComponent,
         ProjectsComponent,
         ProjectDetailComponent,
-	    DashboardComponent
+	    DashboardComponent,
+	    OlMap
     ],
 	providers: [ProjectsService],
     bootstrap: [AppComponent]
