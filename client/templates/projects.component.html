@@ -1,13 +1,33 @@
 <div id="wrapper">
     <div id="left">
-        <h1>Ивестиционные проекты</h1>
-        <div class="filters-container"></div>
-        <div class="indicators-container"></div>
+        <div class="headName">Ивестиционные проекты</div>
+        <div class="filters-container">
+            <div class="inner-filters-container">
+                <select class="selectTab">
+                    <option>Все категории</option>
+                </select>
+            </div>
+        </div>
+        <div class="indicators-container">
+            <div class="Ind">
+                <img src="1.jpg"/>
+                24
+            </div>
+            <div class="Ind">
+                <img src="1.jpg"/>
+                30
+            </div>
+            <div class="Ind">
+                <img src="1.jpg"/>
+                2
+            </div>
+        </div>
         <div class="projects-container"></div>
         <div *ngFor="let project of projects" (click)="onSelect(project)">
             <div class="project">
-                <h4 (click)="goToDetail(project)">{{project.name}}</h4>
-                <h6>{{project.description}}</h6>
+                <hr>
+                <div class="projectName" (click)="goToDetail(project)">{{project.name}}</div>
+                <div class="projectDescription">{{project.description}}</div>
             </div>
         </div>
     </div>
@@ -17,6 +37,55 @@
     <div id="clear"></div>
 </div>
 <style>
+    .headName{
+        margin: 10px 10px 10px 10px;
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    .filters-container{
+        width: 100%;
+        margin: 10px 0px 10px 0px;
+    }
+
+    .inner-filters-container{
+        width: 99%;
+        margin: 0 auto;
+    }
+
+    .selectTab{
+        width: 100%;
+        height: 30px;
+        border-radius: 4px;
+    }
+
+    .Ind{
+        display: inline-block;
+        width: 32%;
+        margin: 0 auto;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .indicators-container{
+        margin-bottom: 10px;
+    }
+
+    .projectName{
+        padding: 10px 10px 5px 10px;
+    }
+
+    .projectDescription{
+        padding: 5px 10px 10px 10px;
+    }
+
+    hr{
+        margin: 0 10px 0 10px;
+        height: 3px;
+        background: black;
+    }
+
     #left{
         width: 40%;
         height: 98%;
