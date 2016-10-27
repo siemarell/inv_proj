@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-//import * as ol from 'openlayers';
+import * as ol from 'openlayers';
 
-//declare var ol:any;
 @Component({
 	selector: "olmap",
 	template: `<div id="map" class="map" ></div>
@@ -9,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class OlMap implements OnInit{
 	ol: any;
-	
+
 	ngOnInit():void{
 		var map = new ol.Map({
 			
