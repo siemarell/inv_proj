@@ -20,8 +20,8 @@ export class OlMap implements OnInit{
 			target: 'map',
 			view: new ol.View({
 				projection: 'EPSG:900913',
-				center: [18.0, 55.4],
-				zoom: 7
+				center: ol.proj.fromLonLat([37.7558, 55.6173]),
+				zoom: 6
 			})
 		});
 	}
