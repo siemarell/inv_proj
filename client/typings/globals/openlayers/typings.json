@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/754ac82a16d9a22d6c28bba2dcd8b227693650b8/openlayers/openlayers.d.ts",
+    "raw": "registry:dt/openlayers#3.18.2+20161007170240",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/754ac82a16d9a22d6c28bba2dcd8b227693650b8/openlayers/openlayers.d.ts"
+  }
+}

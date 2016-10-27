@@ -24,7 +24,7 @@
             // other libraries
             'rxjs':                      'npm:rxjs',
             'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
-            'primeng': 'node_modules/primeng'
+            'openlayers': 'npm:openlayers'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -35,11 +35,7 @@
             rxjs: {
                 defaultExtension: 'js'
             },
-            'angular-in-memory-web-api': {
-                main: './index.js',
-                defaultExtension: 'js'
-            },
-            'primeng': {
+            'openlayers': {
                 defaultExtension: 'js'
             }
         }
