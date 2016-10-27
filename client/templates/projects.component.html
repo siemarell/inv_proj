@@ -1,23 +1,23 @@
 <div id="wrapper">
     <div id="left">
-        <div class="headName">Ивестиционные проекты</div>
+        <div class="head-name">Ивестиционные проекты</div>
         <div class="filters-container">
             <div class="inner-filters-container">
-                <select class="selectTab">
+                <select class="select-tab">
                     <option>Все категории</option>
                 </select>
             </div>
         </div>
         <div class="indicators-container">
-            <div class="Ind">
+            <div class="ind">
                 <img src="1.jpg"/>
                 24
             </div>
-            <div class="Ind">
+            <div class="ind">
                 <img src="1.jpg"/>
                 30
             </div>
-            <div class="Ind">
+            <div class="ind">
                 <img src="1.jpg"/>
                 2
             </div>
@@ -26,7 +26,7 @@
             <div *ngFor="let project of projects" (click)="onSelect(project)">
                 <div class="project">
                     <hr>
-                    <div class="projectName" (click)="goToDetail(project)">{{project.name}}</div>
+                    <div class="project-name" (click)="goToDetail(project)">{{project.name}}</div>
                     <div class="main-section-name">
                         <div>{{project.region}}</div>
                     </div>
@@ -45,37 +45,37 @@
                         <div class="category">
                             <div class="category-name">Сумма инвестиций</div>
                             <div class="category-value">
-                                <span>{{project.investmentsSummValue}}</span>
-                                <span class="currency">{{project.investmentsSummCurrency}}</span>
+                                <span>{{project.investmentsSumValue}}</span>
+                                <span class="currency">{{project.investmentsSumCurrency}}</span>
                             </div>
                         </div>
                         <div class="category">
                             <div class="category-name">Период окупаемости бюджета</div>
                             <div class="category-value">
-                                <span>{{project.paybackSummValue}}</span>
-                                <span class="currency">{{project.paybackSummCurrency}}</span>
+                                <span>{{project.paybackSumValue}}</span>
+                                <span class="currency">{{project.paybackSumCurrency}}</span>
                             </div>
                         </div>
                         <div class="category">
                             <div class="category-name">Внутренняя норма доходности бюджеьа</div>
                             <div class="category-value">
-                                <span>{{project.normalSummValue}}</span>
-                                <span class="currency">{{project.normalSummCurrency}}</span>
+                                <span>{{project.normalSumValue}}</span>
+                                <span class="currency">{{project.normalSumCurrency}}</span>
                             </div>
                         </div>
                         <div class="category">
                             <div class="category-name">Дисконтируемый период окупаемости бюджета</div>
                             <div class="category-value">
-                                <span>{{project.periodSummValue}}</span>
-                                <span class="currency">{{project.periodSummCurrency}}</span>
+                                <span>{{project.periodSumValue}}</span>
+                                <span class="currency">{{project.periodSumCurrency}}</span>
                             </div>
                         </div>
                     </div>
                     <div class="main-section-name">
                         <div>Этапы реализации проекта</div>
                     </div>
-                    <div class="projectDescriptions">
-                        <div *ngFor="let description of project.descriptions" class="projectDescription">{{description}}</div>
+                    <div class="project-descriptions">
+                        <div *ngFor="let description of project.descriptions" class="project-description">{{description}}</div>
                     </div>
                 </div>
             </div>
@@ -149,13 +149,13 @@
 
     /* Project Description */
 
-    .projectDescriptions{
+    .project-descriptions{
         display: table;
         padding-bottom: 10px;
         padding-left: 10px;
     }
 
-    .projectDescription{
+    .project-description{
         display: table-row;
         font-size: 12px;
     }
@@ -177,7 +177,7 @@
 
 
 
-    .headName{
+    .head-name{
         margin: 10px 0px 0px 10px;
         font-size: 26px;
         font-weight: bold;
@@ -196,13 +196,13 @@
         margin: 0 auto;
     }
 
-    .selectTab{
+    .select-tab{
         width: 100%;
         height: 30px;
         border-radius: 4px;
     }
 
-    .Ind{
+    .ind{
         display: inline-block;
         width: 32%;
         margin: 0 auto;
@@ -217,7 +217,7 @@
         margin-left: 10px;
     }
 
-    .projectName{
+    .project-name{
         padding: 10px 10px 5px 10px;
     }
 
@@ -229,7 +229,8 @@
 
     .projects-container{
         height: 84%;
-        overflow: scroll;
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
 
     #left{

@@ -4,13 +4,13 @@ export class Project {
 	region : string;
 	initiators: string[];
 	industry : string;
-	investmentsSummValue : number;
-	investmentsSummCurrency : string;
-	paybackSummValue : number;
-	paybackSummCurrency : string;
-	normalSummValue : number;
-	normalSummCurrency : string;
-	periodSummValue : number;
-	periodSummCurrency : string;
+	investmentsSumValue : number;
+	investmentsSumCurrency : string;
+	paybackSumValue : number;
+	paybackSumCurrency : string;
+	normalSumValue : number;
+	normalSumCurrency : string;
+	periodSumValue : number;
+	periodSumCurrency : string;
 	descriptions: string[];
 }
