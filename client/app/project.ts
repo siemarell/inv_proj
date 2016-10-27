@@ -12,5 +12,5 @@ export class Project {
 	normalSummCurrency : string;
 	periodSummValue : number;
 	periodSummCurrency : string;
-	description: string[];
+	descriptions: string[];
 }

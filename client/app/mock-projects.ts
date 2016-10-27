@@ -4,7 +4,7 @@ export const PROJECTS: Project[] = [
 	{ id: 11,
 		name : 'Project 1',
 		region : 'Еврейская автономная область',
-		initiators : [],
+		initiators : ['ООО "Дальневосточный графит"', 'ООО "Группа Магнезит"'],
 		industry : 'Недра (Графитовая промышленность)',
 		investmentsSummValue : 4.7,
 		investmentsSummCurrency : 'млрд руб.',
@@ -14,7 +14,7 @@ export const PROJECTS: Project[] = [
 		normalSummCurrency : 'лет',
 		periodSummValue : 4.8,
 		periodSummCurrency : 'лет',
-		description: []
+		descriptions: ['Строительство (2011-2018)', 'Выход на проектную мощность (2019-2018)']
 	},
 	{ id: 12,
 		name : 'Project 2',
@@ -29,7 +29,7 @@ export const PROJECTS: Project[] = [
 		normalSummCurrency : 'лет',
 		periodSummValue : 4.8,
 		periodSummCurrency : 'лет',
-		description: []
+		descriptions: []
 	},
 	{ id: 13,
 		name : 'Project 3',
@@ -44,7 +44,7 @@ export const PROJECTS: Project[] = [
 		normalSummCurrency : 'лет',
 		periodSummValue : 4.8,
 		periodSummCurrency : 'лет',
-		description: []
+		descriptions: []
 	},
 	{ id: 14,
 		name : 'Project 4',
@@ -59,7 +59,7 @@ export const PROJECTS: Project[] = [
 		normalSummCurrency : 'лет',
 		periodSummValue : 4.8,
 		periodSummCurrency : 'лет',
-		description: []
+		descriptions: []
 	},
 	{ id: 15,
 		name : 'Project 5',
@@ -74,6 +74,6 @@ export const PROJECTS: Project[] = [
 		normalSummCurrency : 'лет',
 		periodSummValue : 4.8,
 		periodSummCurrency : 'лет',
-		description: []
+		descriptions: []
 	}
 ];

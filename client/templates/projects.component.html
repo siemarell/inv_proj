@@ -28,50 +28,46 @@
                     <hr>
                     <div class="projectName" (click)="goToDetail(project)">{{project.name}}</div>
                     <div class="main-section-name">
-                        <div>Еврейская автономная область</div>
+                        <div>{{project.region}}</div>
                     </div>
                     <div class="initiators">
                         <div class="initiators-section-name">
                             <span>Инициаторы проекта</span>
                         </div>
                         <div class="initiators-name">
-                            <div>ООО "Дальневосточный графит"</div>
-                            <div>ООО "Группа Магнезит"</div>
-                            <div>ООО "Группа Магнезит"</div>
-                            <div>ООО "Группа Магнезит"</div>
-                            <div>ООО "Группа Магнезит"</div>
+                            <div *ngFor="let initiatorName of project.initiators">{{initiatorName}}</div>
                         </div>
                     </div>
                     <div class="main-section-name">
-                        <div>Недра (Графитовая промышленность)</div>
+                        <div>{{project.industry}}</div>
                     </div>
                     <div class="categories">
                         <div class="category">
                             <div class="category-name">Сумма инвестиций</div>
                             <div class="category-value">
-                                <span>4,7</span>
-                                <span class="currency">млрд руб.</span>
+                                <span>{{project.investmentsSummValue}}</span>
+                                <span class="currency">{{project.investmentsSummCurrency}}</span>
                             </div>
                         </div>
                         <div class="category">
                             <div class="category-name">Период окупаемости бюджета</div>
                             <div class="category-value">
-                                <span>4,8</span>
-                                <span class="currency">лет</span>
+                                <span>{{project.paybackSummValue}}</span>
+                                <span class="currency">{{project.paybackSummCurrency}}</span>
                             </div>
                         </div>
                         <div class="category">
                             <div class="category-name">Внутренняя норма доходности бюджеьа</div>
                             <div class="category-value">
-                                <span>35</span>
-                                <span class="currency">%</span>
+                                <span>{{project.normalSummValue}}</span>
+                                <span class="currency">{{project.normalSummCurrency}}</span>
                             </div>
                         </div>
                         <div class="category">
                             <div class="category-name">Дисконтируемый период окупаемости бюджета</div>
                             <div class="category-value">
-                                <span>5,9</span>
-                                <span class="currency">лет</span>
+                                <span>{{project.periodSummValue}}</span>
+                                <span class="currency">{{project.periodSummCurrency}}</span>
                             </div>
                         </div>
                     </div>
@@ -79,8 +75,7 @@
                         <div>Этапы реализации проекта</div>
                     </div>
                     <div class="projectDescriptions">
-                        <div class="projectDescription"> Строительство (2011-2018)</div>
-                        <div class="projectDescription"> Выход на проектную мощность (2019-2018)</div>
+                        <div *ngFor="let description of project.descriptions" class="projectDescription">{{description}}</div>
                     </div>
                 </div>
             </div>
@@ -183,14 +178,17 @@
 
 
     .headName{
-        margin: 10px 10px 10px 10px;
+        margin: 10px 0px 0px 10px;
         font-size: 26px;
         font-weight: bold;
+        width: 97%;
+        height: 5%;
     }
 
     .filters-container{
-        width: 100%;
-        margin: 10px 0px 10px 0px;
+        margin-left: 10px;
+        width: 98%;
+        height: 5%;
     }
 
     .inner-filters-container{
@@ -214,7 +212,9 @@
     }
 
     .indicators-container{
-        margin-bottom: 10px;
+        height: 5%;
+        width: 97%;
+        margin-left: 10px;
     }
 
     .projectName{
@@ -225,6 +225,11 @@
         margin: 0 10px 0 10px;
         height: 3px;
         background: black;
+    }
+
+    .projects-container{
+        height: 84%;
+        overflow: scroll;
     }
 
     #left{
