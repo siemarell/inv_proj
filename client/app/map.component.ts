@@ -7,10 +7,9 @@ import * as ol from 'openlayers';
     `
 })
 export class OlMap implements OnInit{
-	ol: any;
-
+	map: ol.Map;
 	ngOnInit():void{
-		var map = new ol.Map({
+		this.map = new ol.Map({
 			
 			layers: [
 				new ol.layer.Tile({
