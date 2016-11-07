@@ -11,11 +11,34 @@ export class OlMap implements OnInit, OnChanges{
 	@Input() projects: Project[];
 	map: ol.Map;
 	features: ol.Feature[] = [];
-	feturesLayer: ol.layer.Vector;
+	featuresLayer: ol.layer.Vector;
+	styles = {
+		'route': new ol.style.Style({
+			stroke: new ol.style.Stroke({
+				width: 6, color: [237, 212, 0, 0.8]
+			})
+		}),
+		'icon': new ol.style.Style({
+			image: new ol.style.Icon({
+				anchor: [0.5, 1],
+				src: 'https://openlayers.org/en/v3.19.1/examples/data/icon.png'
+			})
+		}),
+		'geoMarker': new ol.style.Style({
+			image: new ol.style.Circle({
+				radius: 7,
+				snapToPixel: false,
+				fill: new ol.style.Fill({color: 'black'}),
+				stroke: new ol.style.Stroke({
+					color: 'white', width: 2
+				})
+			})
+		})
+	};
 	
 	ngOnChanges(changes: SimpleChanges):void{
 		if (changes['projects'] && !changes['projects'].isFirstChange()){
-			console.log(changes['projects'].currentValue);
+			//console.log(changes['projects'].currentValue);
 			this.redrawFeatures();
 		}
 	}
@@ -39,37 +62,17 @@ export class OlMap implements OnInit, OnChanges{
 	}
 	
 	onMapClick(evt): void{
-		console.log(this.projects);
-		console.log(this);
-		console.log(evt);
-		this.map.removeLayer(this.feturesLayer);
+		// console.log(this.projects);
+		// console.log(this);
+		// console.log(evt);
+		this.map.removeLayer(this.featuresLayer);
 	}
 	
 	redrawFeatures():void{
-		var styles = {
-			'route': new ol.style.Style({
-				stroke: new ol.style.Stroke({
-					width: 6, color: [237, 212, 0, 0.8]
-				})
-			}),
-			'icon': new ol.style.Style({
-				image: new ol.style.Icon({
-					anchor: [0.5, 1],
-					src: 'https://openlayers.org/en/v3.19.1/examples/data/icon.png'
-				})
-			}),
-			'geoMarker': new ol.style.Style({
-				image: new ol.style.Circle({
-					radius: 7,
-					snapToPixel: false,
-					fill: new ol.style.Fill({color: 'black'}),
-					stroke: new ol.style.Stroke({
-						color: 'white', width: 2
-					})
-				})
-			})
-		};
+		//Remove old feature layer
+		this.map.removeLayer(this.featuresLayer);
 		
+		//Map projects into ol.features
 		var features: ol.Feature[] = this.projects
 			.filter(project => {
 				return project.coordinates!=undefined;
@@ -78,23 +81,27 @@ export class OlMap implements OnInit, OnChanges{
 				var feature = new ol.Feature({
 					geometry: new ol.geom.Point(ol.proj.fromLonLat(project.coordinates))
 				});
-				feature.setStyle(styles.icon);
-				console.log('1');
+				feature.setStyle(this.styles['icon']);
 				return feature;
 			});
-
-		console.log(features);
-		// var marker = new ol.Feature({
-		// 	type: 'icon',
-		// 	geometry: new ol.geom.Point([37.7558, 55.6173])
-		// });
-		// marker.setStyle(styles.icon);
-		this.feturesLayer = new ol.layer.Vector({
+		
+		//Create new feature layer
+		this.featuresLayer = new ol.layer.Vector({
 			source: new ol.source.Vector({
 				features: features
 			})
 		});
-		this.map.addLayer(this.feturesLayer);
+		
+		//Add new feature layer
+		this.map.addLayer(this.featuresLayer);
 		//console.log(this.features)
+	}
+	
+	centerOnProject(project: Project): void{
+		this.map.setView(new ol.View({
+			projection: 'EPSG:900913',
+			center: ol.proj.fromLonLat(project.coordinates),
+			zoom: 6
+		}));
 	}
 }
