@@ -14,7 +14,8 @@ export const PROJECTS: Project[] = [
 		normalSumCurrency : 'лет',
 		periodSumValue : 4.8,
 		periodSumCurrency : 'лет',
-		descriptions: ['Строительство (2011-2018)', 'Выход на проектную мощность (2019-2018)']
+		descriptions: ['Строительство (2011-2018)', 'Выход на проектную мощность (2019-2018)'],
+		coordinates: [37.7558, 55.6173]
 	},
 	{ id: 12,
 		name : 'Project 2',
@@ -29,7 +30,8 @@ export const PROJECTS: Project[] = [
 		normalSumCurrency : 'лет',
 		periodSumValue : 4.8,
 		periodSumCurrency : 'лет',
-		descriptions: []
+		descriptions: [],
+		coordinates: [37.6558, 55.6173]
 	},
 	{ id: 13,
 		name : 'Project 3',

@@ -1,4 +1,4 @@
-export class Project {
+export interface Project {
 	id: number;
 	name: string;
 	region : string;
@@ -13,4 +13,5 @@ export class Project {
 	periodSumValue : number;
 	periodSumCurrency : string;
 	descriptions: string[];
+	coordinates?: [number,number];
 }
