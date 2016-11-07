@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent} from './app.component';
 import {ProjectDetailComponent} from './project-detail.component'
 import {ProjectsComponent} from "./projects.component";
-import {DashboardComponent} from "./dashboard.component";
+
 import {ProjectsService} from "./projects.service";
 import { OlMap } from "./map.component"
 
@@ -20,7 +20,6 @@ import { OlMap } from "./map.component"
         AppComponent,
         ProjectsComponent,
         ProjectDetailComponent,
-	    DashboardComponent,
 	    OlMap
     ],
 	providers: [ProjectsService],

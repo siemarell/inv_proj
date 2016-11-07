@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
+import { Project } from  './project';
 import * as ol from 'openlayers';
 
 @Component({
@@ -7,7 +8,10 @@ import * as ol from 'openlayers';
     `
 })
 export class OlMap implements OnInit{
+	@Input() projects: Project[];
 	map: ol.Map;
+	features: ol.Feature[];
+	
 	ngOnInit():void{
 		this.map = new ol.Map({
 			
@@ -23,5 +27,12 @@ export class OlMap implements OnInit{
 				zoom: 6
 			})
 		});
+		this.map.on('click', this.onMapClick.bind(this));
+	}
+	
+	onMapClick(evt): void{
+		console.log(this.projects);
+		console.log(this);
+		console.log(evt);
 	}
 }
