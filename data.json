@@ -1,0 +1,98 @@
+{
+  "projects": [
+    {
+      "id": 11,
+      "name": "Разработка Тополихинского участка Союзного меторождения графитовой руды",
+      "region": "Еврейская автономная область",
+      "initiators": [
+        "ООО \"Дальневосточный графит\"",
+        "ООО \"Группа Магнезит\""
+      ],
+      "industry": "Недра (Графитовая промышленность)",
+      "investmentsSumValue": 4.7,
+      "investmentsSumCurrency": "млрд руб.",
+      "paybackSumValue": 4.8,
+      "paybackSumCurrency": "лет",
+      "normalSumValue": 4.8,
+      "normalSumCurrency": "лет",
+      "periodSumValue": 4.8,
+      "periodSumCurrency": "лет",
+      "descriptions": [
+        "Строительство (2011-2018)",
+        "Выход на проектную мощность (2019-2018)"
+      ],
+      "coordinates": [
+        37.7558,
+        55.6173
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Project 2",
+      "region": "Еврейская автономная область",
+      "initiators": [],
+      "industry": "Недра (Графитовая промышленность)",
+      "investmentsSumValue": 4.7,
+      "investmentsSumCurrency": "млрд руб.",
+      "paybackSumValue": 4.8,
+      "paybackSumCurrency": "лет",
+      "normalSumValue": 4.8,
+      "normalSumCurrency": "лет",
+      "periodSumValue": 4.8,
+      "periodSumCurrency": "лет",
+      "descriptions": [],
+      "coordinates": [
+        30.6558,
+        55.6173
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Project 3",
+      "region": "Еврейская автономная область",
+      "initiators": [],
+      "industry": "Недра (Графитовая промышленность)",
+      "investmentsSumValue": 4.7,
+      "investmentsSumCurrency": "млрд руб.",
+      "paybackSumValue": 4.8,
+      "paybackSumCurrency": "лет",
+      "normalSumValue": 4.8,
+      "normalSumCurrency": "лет",
+      "periodSumValue": 4.8,
+      "periodSumCurrency": "лет",
+      "descriptions": []
+    },
+    {
+      "id": 14,
+      "name": "Project 3",
+      "region": "Еврейская автономная область",
+      "initiators": [],
+      "industry": "Недра (Графитовая промышленность)",
+      "investmentsSumValue": 4.7,
+      "investmentsSumCurrency": "млрд руб.",
+      "paybackSumValue": 4.8,
+      "paybackSumCurrency": "лет",
+      "normalSumValue": 4.8,
+      "normalSumCurrency": "лет",
+      "periodSumValue": 4.8,
+      "periodSumCurrency": "лет",
+      "descriptions": []
+    },
+    {
+      "id": 15,
+      "name": "Project 3",
+      "region": "Еврейская автономная область",
+      "initiators": [],
+      "industry": "Недра (Графитовая промышленность)",
+      "investmentsSumValue": 4.7,
+      "investmentsSumCurrency": "млрд руб.",
+      "paybackSumValue": 4.8,
+      "paybackSumCurrency": "лет",
+      "normalSumValue": 4.8,
+      "normalSumCurrency": "лет",
+      "periodSumValue": 4.8,
+      "periodSumCurrency": "лет",
+      "descriptions": []
+    }
+  ]
+}
