@@ -1,9 +1,11 @@
-import {Component, OnInit, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, SimpleChanges, ViewEncapsulation} from '@angular/core';
 import { Project } from  './project';
 import * as ol from 'openlayers';
 
 @Component({
 	selector: "olmap",
+	styleUrls: ['styles/map.css'],
+	encapsulation: ViewEncapsulation.None,
 	template: `<div id="map" class="map" ></div>
     `
 })
@@ -11,6 +13,7 @@ export class OlMap implements OnInit, OnChanges{
 	@Input() projects: Project[];
 	@Input() selectedProject: Project;
 	map: ol.Map;
+	extentControl = new ExtentControl();
 	features: ol.Feature[] = [];
 	featuresLayer: ol.layer.Vector;
 	
@@ -28,12 +31,12 @@ export class OlMap implements OnInit, OnChanges{
 	
 	ngOnInit():void{
 		this.map = new ol.Map({
-			
 			layers: [
 				new ol.layer.Tile({
 					source: new ol.source.OSM()
 				})
 			],
+			controls: ol.control.defaults().extend([this.extentControl]),
 			target: 'map',
 			view: new ol.View({
 				projection: 'EPSG:900913',
@@ -131,5 +134,16 @@ class Styles {
 	
 	static getStyle(name: string): ol.style.Style{
 		return this.styles[name];
+	}
+}
+
+class ExtentControl extends ol.control.Control{
+	constructor(){
+		var button = document.createElement('button');
+		button.innerHTML = 'C';
+		var element = document.createElement('div');
+		element.className = 'rotate-north ol-unselectable ol-control';
+		element.appendChild(button);
+		super({element:element});
 	}
 }
