@@ -31,7 +31,7 @@ export const PROJECTS: Project[] = [
 		periodSumValue : 4.8,
 		periodSumCurrency : 'лет',
 		descriptions: [],
-		coordinates: [37.6558, 55.6173]
+		coordinates: [30.6558, 55.6173]
 	},
 	{ id: 13,
 		name : 'Project 3',

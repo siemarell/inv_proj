@@ -9,37 +9,20 @@ import * as ol from 'openlayers';
 })
 export class OlMap implements OnInit, OnChanges{
 	@Input() projects: Project[];
+	@Input() selectedProject: Project;
 	map: ol.Map;
 	features: ol.Feature[] = [];
 	featuresLayer: ol.layer.Vector;
-	styles = {
-		'route': new ol.style.Style({
-			stroke: new ol.style.Stroke({
-				width: 6, color: [237, 212, 0, 0.8]
-			})
-		}),
-		'icon': new ol.style.Style({
-			image: new ol.style.Icon({
-				anchor: [0.5, 1],
-				src: 'https://openlayers.org/en/v3.19.1/examples/data/icon.png'
-			})
-		}),
-		'geoMarker': new ol.style.Style({
-			image: new ol.style.Circle({
-				radius: 7,
-				snapToPixel: false,
-				fill: new ol.style.Fill({color: 'black'}),
-				stroke: new ol.style.Stroke({
-					color: 'white', width: 2
-				})
-			})
-		})
-	};
 	
 	ngOnChanges(changes: SimpleChanges):void{
 		if (changes['projects'] && !changes['projects'].isFirstChange()){
 			//console.log(changes['projects'].currentValue);
 			this.redrawFeatures();
+			this.extentToFeatures();
+		}
+		if (changes['selectedProject'] && !changes['selectedProject'].isFirstChange()){
+			console.log(changes);
+			this.centerOnProject(changes['selectedProject'].currentValue);
 		}
 	}
 	
@@ -65,10 +48,11 @@ export class OlMap implements OnInit, OnChanges{
 		// console.log(this.projects);
 		// console.log(this);
 		// console.log(evt);
-		this.map.removeLayer(this.featuresLayer);
+		//this.map.removeLayer(this.featuresLayer);
+		//this.centerOnProject(this.projects[0]);
 	}
 	
-	redrawFeatures():void{
+	private redrawFeatures():void{
 		//Remove old feature layer
 		this.map.removeLayer(this.featuresLayer);
 		
@@ -81,7 +65,7 @@ export class OlMap implements OnInit, OnChanges{
 				var feature = new ol.Feature({
 					geometry: new ol.geom.Point(ol.proj.fromLonLat(project.coordinates))
 				});
-				feature.setStyle(this.styles['icon']);
+				feature.setStyle(Styles.getStyle('icon'));
 				return feature;
 			});
 		
@@ -94,14 +78,58 @@ export class OlMap implements OnInit, OnChanges{
 		
 		//Add new feature layer
 		this.map.addLayer(this.featuresLayer);
+		//Extent
+		//this.extentToFeatures();
+		//this.map.getView().fit(this.featuresLayer.getExtent(), this.map.getSize());
 		//console.log(this.features)
 	}
 	
-	centerOnProject(project: Project): void{
+	private extentToFeatures():void{
+		var extent = ol.extent.createEmpty();
+		ol.extent.extend(extent, this.featuresLayer.getSource().getExtent());
+		this.map.getView().fit(extent, this.map.getSize());
+	}
+	
+	private centerOnProject(project: Project): void{
+		if (!project.hasOwnProperty('coordinates')){
+			console.log('project has no coordinates');
+			return;
+		}
 		this.map.setView(new ol.View({
 			projection: 'EPSG:900913',
 			center: ol.proj.fromLonLat(project.coordinates),
-			zoom: 6
+			zoom: 9
 		}));
+	}
+}
+
+
+class Styles {
+	private static styles: {[index: string]: ol.style.Style} = {
+		'route': new ol.style.Style({
+			stroke: new ol.style.Stroke({
+				width: 6, color: [237, 212, 0, 0.8]
+			})
+		}),
+		'icon': new ol.style.Style({
+			image: new ol.style.Icon({
+				anchor: [0.5, 1],
+				src: 'https://openlayers.org/en/v3.19.1/examples/data/icon.png'
+			})
+		}),
+		'geoMarker': new ol.style.Style({
+			image: new ol.style.Circle({
+				radius: 7,
+				snapToPixel: false,
+				fill: new ol.style.Fill({color: 'black'}),
+				stroke: new ol.style.Stroke({
+					color: 'white', width: 2
+				})
+			})
+		})
+	};
+	
+	static getStyle(name: string): ol.style.Style{
+		return this.styles[name];
 	}
 }
