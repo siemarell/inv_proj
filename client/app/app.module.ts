@@ -9,6 +9,7 @@ import {ProjectsComponent} from "./projects.component";
 
 import {ProjectsService} from "./projects.service";
 import { OlMap } from "./map.component"
+import {PageNotFoundComponent} from "./page-not-found.component";
 
 @NgModule({
     imports: [
@@ -20,7 +21,8 @@ import { OlMap } from "./map.component"
         AppComponent,
         ProjectsComponent,
         ProjectDetailComponent,
-	    OlMap
+	    OlMap,
+	    PageNotFoundComponent
     ],
 	providers: [ProjectsService],
     bootstrap: [AppComponent]
