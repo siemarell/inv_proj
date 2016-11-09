@@ -824,7 +824,7 @@ interface GanttHotkeys{
 	edit_cancel: number;
 }
 
-//Gantt.locale 
+//Gantt.locale
 
 interface GanttLocaleDate{
 	month_full: string[];
@@ -1727,6 +1727,3 @@ interface GanttStatic{
 
 declare var gantt: GanttStatic;
 declare var Gantt: GanttEnterprise;
-declare module 'dhtmlxgantt' {
-	export = gantt;
-}

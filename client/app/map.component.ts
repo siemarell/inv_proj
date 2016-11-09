@@ -4,7 +4,7 @@ import * as ol from 'openlayers';
 
 @Component({
 	selector: "olmap",
-	styleUrls: ['styles/map.css'],
+	styleUrls: ['node_modules/openlayers/css/ol.css','styles/map.css'],
 	encapsulation: ViewEncapsulation.None,
 	template: `<div id="map" class="map" ></div>
     `
