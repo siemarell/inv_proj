@@ -1,0 +1,58 @@
+<div class="projects-container">
+    <div *ngFor="let project of projects" (click)="onSelect(project)">
+        <div class="project">
+            <hr>
+            <div class="project-name" (click)="goToDetail(project)">{{project.name}}</div>
+            <div class="main-section-name">
+                <div>{{project.region}}</div>
+            </div>
+            <div class="initiators">
+                <div class="initiators-section-name">
+                    <span>Инициаторы проекта</span>
+                </div>
+                <div class="initiators-name">
+                    <div *ngFor="let initiatorName of project.initiators">{{initiatorName}}</div>
+                </div>
+            </div>
+            <div class="main-section-name">
+                <div>{{project.industry}}</div>
+            </div>
+            <div class="categories">
+                <div class="category">
+                    <div class="category-name">Сумма инвестиций</div>
+                    <div class="category-value">
+                        <span>{{project.investmentsSumValue}}</span>
+                        <span class="currency">{{project.investmentsSumCurrency}}</span>
+                    </div>
+                </div>
+                <div class="category">
+                    <div class="category-name">Период окупаемости бюджета</div>
+                    <div class="category-value">
+                        <span>{{project.paybackSumValue}}</span>
+                        <span class="currency">{{project.paybackSumCurrency}}</span>
+                    </div>
+                </div>
+                <div class="category">
+                    <div class="category-name">Внутренняя норма доходности бюджеьа</div>
+                    <div class="category-value">
+                        <span>{{project.normalSumValue}}</span>
+                        <span class="currency">{{project.normalSumCurrency}}</span>
+                    </div>
+                </div>
+                <div class="category">
+                    <div class="category-name">Дисконтируемый период окупаемости бюджета</div>
+                    <div class="category-value">
+                        <span>{{project.periodSumValue}}</span>
+                        <span class="currency">{{project.periodSumCurrency}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="main-section-name">
+                <div>Этапы реализации проекта</div>
+            </div>
+            <div class="project-descriptions">
+                <div *ngFor="let description of project.descriptions" class="project-description">{{description}}</div>
+            </div>
+        </div>
+    </div>
+</div>

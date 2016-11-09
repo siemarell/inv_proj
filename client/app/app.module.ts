@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent} from './app.component';
 import {ProjectDetailComponent} from './project-detail.component'
 import {ProjectsComponent} from "./projects.component";
+import {ProjectDescriptionComponent} from "./project-description.component";
 
 import {ProjectsService} from "./projects.service";
 import { OlMap } from "./map.component"
@@ -23,6 +24,7 @@ import {HttpModule} from "@angular/http";
         AppComponent,
         ProjectsComponent,
         ProjectDetailComponent,
+        ProjectDescriptionComponent,
 	    OlMap,
 	    PageNotFoundComponent
     ],

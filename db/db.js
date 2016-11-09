@@ -9,4 +9,8 @@ Database.prototype.getProjects = function () {
     return this.projects;
 };
 
-module.exports = new Database('./data.json');
+var path = require('path');
+var appDir = path.dirname(__dirname);
+
+
+module.exports = new Database(appDir + '/data.json');

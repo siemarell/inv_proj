@@ -6,7 +6,7 @@ import { Project } from './project';
 import { ProjectsService } from './projects.service';
 
 @Component({
-	selector: 'my-hero-detail',
+	selector: 'projects-info',
 	templateUrl: '/templates/project-detail.component.html',
 	styleUrls: ['styles/project-detail.component.css']
 })
