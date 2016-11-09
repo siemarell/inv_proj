@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/bc0288da14917cdac1f1878869d448252c805efa/dhtmlxgantt/dhtmlxgantt.d.ts",
+    "raw": "registry:dt/dhtmlxgantt#4.0.0+20160613152845",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/bc0288da14917cdac1f1878869d448252c805efa/dhtmlxgantt/dhtmlxgantt.d.ts"
+  }
+}

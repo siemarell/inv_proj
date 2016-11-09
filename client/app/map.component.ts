@@ -24,7 +24,7 @@ export class OlMap implements OnInit, OnChanges{
 			this.extentToFeatures();
 		}
 		if (changes['selectedProject'] && !changes['selectedProject'].isFirstChange()){
-			console.log(changes);
+			//console.log(changes);
 			this.centerOnProject(changes['selectedProject'].currentValue);
 		}
 	}

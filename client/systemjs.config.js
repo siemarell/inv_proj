@@ -23,8 +23,8 @@
             '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
             // other libraries
             'rxjs':                      'npm:rxjs',
-            'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
-            'openlayers': 'npm:openlayers/dist/ol.js'
+            'openlayers': 'npm:openlayers/dist/ol.js',
+            'dhtmlxgantt': 'npm:dhtmlx-gantt/codebase/dhtmlxgantt.js'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -36,6 +36,9 @@
                 defaultExtension: 'js'
             },
             'openlayers': {
+                defaultExtension: 'js'
+            },
+            "dhtmlxgantt": {
                 defaultExtension: 'js'
             }
         }
