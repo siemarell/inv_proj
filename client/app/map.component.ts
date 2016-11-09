@@ -1,4 +1,4 @@
-import {Component, OnInit, Input, OnChanges, SimpleChanges, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, SimpleChanges, ViewEncapsulation, EventEmitter} from '@angular/core';
 import { Project } from  './project';
 import * as ol from 'openlayers';
 
@@ -30,6 +30,7 @@ export class OlMap implements OnInit, OnChanges{
 	}
 	
 	ngOnInit():void{
+		//Initialize map
 		this.map = new ol.Map({
 			layers: [
 				new ol.layer.Tile({
@@ -44,7 +45,10 @@ export class OlMap implements OnInit, OnChanges{
 				zoom: 6
 			})
 		});
+		
+		//Subscribe to events
 		this.map.on('click', this.onMapClick.bind(this));
+		this.extentControl.on('click', this.extentToFeatures.bind(this));
 	}
 	
 	onMapClick(evt): void{
@@ -145,5 +149,10 @@ class ExtentControl extends ol.control.Control{
 		element.className = 'rotate-north ol-unselectable ol-control';
 		element.appendChild(button);
 		super({element:element});
+		button.addEventListener('click', this.onClick.bind(this))
+	}
+	
+	onClick(): void {
+	 	this.dispatchEvent('click')
 	}
 }
