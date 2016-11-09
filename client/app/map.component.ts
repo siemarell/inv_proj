@@ -4,7 +4,7 @@ import * as ol from 'openlayers';
 
 @Component({
 	selector: "olmap",
-	styleUrls: ['styles/map.css'],
+	styleUrls: ['node_modules/openlayers/css/ol.css','styles/map.css'],
 	encapsulation: ViewEncapsulation.None,
 	template: `<div id="map" class="map" ></div>
     `
@@ -24,7 +24,7 @@ export class OlMap implements OnInit, OnChanges{
 			this.extentToFeatures();
 		}
 		if (changes['selectedProject'] && !changes['selectedProject'].isFirstChange()){
-			console.log(changes);
+			//console.log(changes);
 			this.centerOnProject(changes['selectedProject'].currentValue);
 		}
 	}

@@ -12,6 +12,8 @@ import {ProjectsService} from "./projects.service";
 import { OlMap } from "./map.component"
 import {PageNotFoundComponent} from "./page-not-found.component";
 import {HttpModule} from "@angular/http";
+import {GanttComponent} from "./gantt.component";
+
 
 @NgModule({
     imports: [
@@ -26,6 +28,7 @@ import {HttpModule} from "@angular/http";
         ProjectDetailComponent,
         ProjectDescriptionComponent,
 	    OlMap,
+	    GanttComponent,
 	    PageNotFoundComponent
     ],
 	providers: [ProjectsService],
