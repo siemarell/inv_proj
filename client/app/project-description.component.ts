@@ -1,6 +1,7 @@
 import {Component, Input, OnInit, OnChanges, SimpleChanges} from '@angular/core';
 import { ActivatedRoute, Params} from '@angular/router';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router'
 
 import { Project } from './project';
 import { ProjectsService } from './projects.service';
@@ -15,22 +16,24 @@ export class ProjectDescriptionComponent implements OnInit, OnChanges{
 
 
     ngOnChanges(changes: SimpleChanges): void {
-        console.log(changes);
-        console.log(this.project);
+        // console.log(changes);
+        // console.log(this.project);
     }
 
-    ngOnInit(): void {
-        this.route.params.forEach((params: Params) => {
-            let id = +params['id'];
-            this.projectsService.getProject(id).then(project => this.project = project)
-        })
-    }
+    ngOnInit(){}
+
     goBack(): void {
         this.location.back();
     }
+
+    goToDetail(project: Project): void {
+        this.router.navigate(['detail', this.project.id])
+    }
+
     constructor(
         private projectsService: ProjectsService,
         private route: ActivatedRoute,
-        private location: Location
+        private location: Location,
+        private router: Router
     ) {}
 }

@@ -1,6 +1,8 @@
 <div class="main-div">
     <div class="project-description-div">
-        <project-description [project]="project"></project-description>
+        <div *ngIf="project != undefined">
+            <project-description [project]="project"></project-description>
+        </div>
     </div>
     <div class="information-div">
         <div></div>
