@@ -1,6 +1,6 @@
 {
-  "name": "angular-quickstart",
-  "version": "1.0.0",
+  "name": "invest_projects",
+  "version": "0.0.1",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "lite": "lite-server",
@@ -21,10 +21,12 @@
     "@angular/router": "~3.0.1",
     "@angular/upgrade": "~2.0.1",
     "angular-in-memory-web-api": "~0.1.1",
+    "angular2-highcharts": "^0.4.1",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "dhtmlx-gantt": "^4.1.0",
     "font-awesome": "^4.6.3",
+    "highcharts": "^5.0.2",
     "openlayers": "^3.19.0",
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.0-beta.12",

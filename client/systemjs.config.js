@@ -24,7 +24,11 @@
             // other libraries
             'rxjs':                      'npm:rxjs',
             'openlayers': 'npm:openlayers/dist/ol.js',
-            'dhtmlxgantt': 'npm:dhtmlx-gantt/codebase/dhtmlxgantt.js'
+            'dhtmlxgantt': 'npm:dhtmlx-gantt/codebase/dhtmlxgantt.js',
+            'highcharts': 'npm:highcharts',
+            'angular2-highcharts': 'npm:angular2-highcharts',
+            'moment': 'node_modules/moment/moment.js',
+            'ng2-bootstrap/ng2-bootstrap': 'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -39,6 +43,14 @@
                 defaultExtension: 'js'
             },
             "dhtmlxgantt": {
+                defaultExtension: 'js'
+            },
+            'angular2-highcharts': {
+                main: './index.js',
+                defaultExtension: 'js'
+            },
+            'highcharts': {
+                main: './highcharts.src.js',
                 defaultExtension: 'js'
             }
         }
