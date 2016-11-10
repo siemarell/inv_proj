@@ -5,7 +5,7 @@ import {ProjectDetailComponent} from "./project-detail.component";
 import {PageNotFoundComponent} from "./page-not-found.component";
 import { GanttComponent } from  "./gantt.component";
 import { HChartComponent} from './hchart.component';
-import {CarouselDemoComponent} from "./carousel-img.component";
+// import {CarouselDemoComponent} from "./carousel-img.component";
 
 const appRoutes: Routes = [
 	{
@@ -16,10 +16,10 @@ const appRoutes: Routes = [
 		path: '',
 		component: ProjectsComponent
 	},
-	{
-		path: 'carousel',
-		component: CarouselDemoComponent,
-	},
+	// {
+	// 	path: 'carousel',
+	// 	component: CarouselDemoComponent,
+	// },
 	{
 		path: 'gantt',
 		component: GanttComponent,

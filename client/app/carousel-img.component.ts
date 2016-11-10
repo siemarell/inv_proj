@@ -15,7 +15,7 @@ import { Component } from "@angular/core";
 </div>
 `
 })
-export class CarouselDemoComponent {
+export class CarouselComponent {
 	public myInterval:number = 5000;
 	public noWrapSlides:boolean = true;
 	public slides:Array<any> = [];

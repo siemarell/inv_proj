@@ -3,7 +3,7 @@ import 'dhtmlxgantt';
 
 @Component({
 	selector: 'gantt',
-	template: `<div id="gantt" style="height:350px; width:100%;"></div>`,
+	template: `<div id="gantt" class="col-md-12" style="height: 100%"></div>`,
 	encapsulation: ViewEncapsulation.None,
 	styleUrls: ['node_modules/dhtmlx-gantt/codebase/dhtmlxgantt.css']
 })
