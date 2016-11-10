@@ -3,7 +3,8 @@ import { Routes, RouterModule} from '@angular/router'
 import { ProjectsComponent } from './projects.component'
 import {ProjectDetailComponent} from "./project-detail.component";
 import {PageNotFoundComponent} from "./page-not-found.component";
-import { GanttComponent } from  "./gantt.component"
+import { GanttComponent } from  "./gantt.component";
+import { HChartComponent} from './hchart.component';
 
 const appRoutes: Routes = [
 	{
@@ -17,6 +18,10 @@ const appRoutes: Routes = [
 	{
 		path: 'gantt',
 		component: GanttComponent,
+	},
+	{
+		path: 'chart',
+		component: HChartComponent,
 	},
 	{
 		path: 'detail/:id',
