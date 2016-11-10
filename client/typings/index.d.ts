@@ -3,3 +3,4 @@
 /// <reference path="globals/jasmine/index.d.ts" />
 /// <reference path="globals/node/index.d.ts" />
 /// <reference path="globals/openlayers/index.d.ts" />
+/// <reference path="../node_modules/ng2-bootstrap/ng2-bootstrap.d.ts" />

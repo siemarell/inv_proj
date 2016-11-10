@@ -15,8 +15,9 @@ import { PageNotFoundComponent } from "./page-not-found.component";
 import { HttpModule } from "@angular/http";
 import { GanttComponent } from "./gantt.component";
 import { HChartComponent } from './hchart.component';
-// import { CarouselModule } from 'ng2-bootstrap/ng2-bootstrap';
-// import {CarouselDemoComponent} from "./carousel-img.component";
+import { CarouselModule } from 'ng2-bootstrap/ng2-bootstrap';
+import {CarouselDemoComponent} from "./carousel-img.component";
+import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 @NgModule({
     imports: [
@@ -24,7 +25,9 @@ import { HChartComponent } from './hchart.component';
         FormsModule,
 	    HttpModule,
 	    ChartModule,
-	    AppRoutingModule
+	    AppRoutingModule,
+	    CarouselModule,
+	    ModalModule
     ],
     declarations: [
         AppComponent,
