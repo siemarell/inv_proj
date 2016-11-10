@@ -1,5 +1,4 @@
-<div *ngFor="let project of projects" (click)="onSelect(project)">
-    <div class="project">
+<div class="project">
         <hr>
         <div class="project-name" (click)="goToDetail(project)">{{project.name}}</div>
         <div class="main-section-name">
@@ -10,8 +9,8 @@
                 <span>Инициаторы проекта</span>
             </div>
             <div class="initiators-name">
-                <div *ngFor="let initiatorName of project.initiators">{{initiatorName}}</div>
-            </div>
+                <div *ngIf="project"><div *ngFor="let initiatorName of project.initiators">{{initiatorName}}</div></div>
+
         </div>
         <div class="main-section-name">
             <div>{{project.industry}}</div>
@@ -52,5 +51,4 @@
         <div class="project-descriptions">
             <div *ngFor="let description of project.descriptions" class="project-description">{{description}}</div>
         </div>
-    </div>
 </div>

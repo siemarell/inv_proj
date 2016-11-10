@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, OnChanges, SimpleChanges} from '@angular/core';
 import { ActivatedRoute, Params} from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -6,12 +6,18 @@ import { Project } from './project';
 import { ProjectsService } from './projects.service';
 
 @Component({
-    selector: 'projects-description',
+    selector: 'project-description',
     templateUrl: '/templates/project-description.component.html',
     styleUrls: ['styles/project-description.component.css']
 })
-export class ProjectDescriptionComponent implements OnInit{
-    project: Project;
+export class ProjectDescriptionComponent implements OnInit, OnChanges{
+    @Input() project: Project;
+
+
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log(changes);
+        console.log(this.project);
+    }
 
     ngOnInit(): void {
         this.route.params.forEach((params: Params) => {
