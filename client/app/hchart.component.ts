@@ -15,21 +15,51 @@ export class HChartComponent {
                 style:{
                     fontFamily: 'sans-serif',
                     fontSize: '20px',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
                 }
 			},
 			credits: {
 				enabled: false
 			},
+            legend:{
+                align: 'left',
+                verticalAlign: 'top',
+                itemMarginTop: 30,
+                itemMarginBottom: 10,
+                x: 100,
+                symbolRadius: 0
+            },
 			chart: {
 				type: 'column'
 			},
 			xAxis: {
-				categories: [2014,2015,2016]
+				categories: [2014,2015,2016, 2017],
+                labels: {
+                    style:{
+                        fontSize: '20px'
+                    }
+                }
 			},
+            yAxis: {
+                labels:{
+                    format: '{value}',
+                    style:{
+                        fontSize: '20px'
+                    }
+                },
+                title:{
+                    text: ''
+                }
+            },
 			series: [{
-				data: [15000, 17000],
-			}]
+                name: 'План',
+				data: [16000, 17000, 13000, 37000],
+                color: 'blue'
+			},{
+                name: 'Факт',
+                data: [15000, 15000, 0, 0],
+                color : 'green'
+            }]
 		};
 	}
 }
