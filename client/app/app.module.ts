@@ -16,7 +16,7 @@ import { HttpModule } from "@angular/http";
 import { GanttComponent } from "./gantt.component";
 import { HChartComponent } from './hchart.component';
 import { CarouselModule } from 'ng2-bootstrap/ng2-bootstrap';
-import {CarouselDemoComponent} from "./carousel-img.component";
+import {CarouselComponent} from "./carousel-img.component";
 import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 @NgModule({
@@ -37,6 +37,7 @@ import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
 	    OlMap,
 	    GanttComponent,
 	    HChartComponent,
+        CarouselComponent,
 	    PageNotFoundComponent
     ],
 	providers: [ProjectsService],
