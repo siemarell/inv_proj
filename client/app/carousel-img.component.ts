@@ -41,8 +41,13 @@ import { Component, ViewChild } from "@angular/core";
     </div>
   </div>
 </div>
-
+<video width="352" height="198" controls>
+    <source src="http://live.netd.com.tr/S1/HLS_LIVE/dreamtv/index.m3u8" type="application/x-mpegURL">
+</video>
+<object type="application/x-shockwave-flash" id="movie" name="movie" data="http://www.zonytvcom.info/saki2/player/player-licensed.swf" width="960" height="570">
+</object>
 `
+	
 })
 export class CarouselDemoComponent {
 	public myInterval:number = 5000;
