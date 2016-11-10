@@ -16,6 +16,7 @@ import { GanttComponent } from "./gantt.component";
 import { HChartComponent } from './hchart.component';
 import { CarouselModule } from 'ng2-bootstrap/ng2-bootstrap';
 import {CarouselDemoComponent} from "./carousel-img.component";
+import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 @NgModule({
     imports: [
@@ -24,7 +25,8 @@ import {CarouselDemoComponent} from "./carousel-img.component";
 	    HttpModule,
 	    ChartModule,
 	    AppRoutingModule,
-	    CarouselModule
+	    CarouselModule,
+	    ModalModule
     ],
     declarations: [
         AppComponent,
