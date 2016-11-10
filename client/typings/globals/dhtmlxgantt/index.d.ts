@@ -824,7 +824,7 @@ interface GanttHotkeys{
 	edit_cancel: number;
 }
 
-//Gantt.locale
+//Gantt.locale 
 
 interface GanttLocaleDate{
 	month_full: string[];
