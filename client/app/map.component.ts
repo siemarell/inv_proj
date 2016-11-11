@@ -92,9 +92,18 @@ export class OlMap implements OnInit, OnChanges{
 	}
 	
 	private extentToFeatures():void{
-		var extent = ol.extent.createEmpty();
-		ol.extent.extend(extent, this.featuresLayer.getSource().getExtent());
-		this.map.getView().fit(extent, this.map.getSize());
+		switch (this.projects.length){
+			case 0:
+				break;
+			case 1:
+				this.centerOnProject(this.projects[0]);
+				break;
+			default:
+				var extent = ol.extent.createEmpty();
+				ol.extent.extend(extent, this.featuresLayer.getSource().getExtent());
+				this.map.getView().fit(extent, this.map.getSize());
+		}
+	
 	}
 	
 	private centerOnProject(project: Project): void{
