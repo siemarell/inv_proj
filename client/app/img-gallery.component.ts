@@ -2,20 +2,16 @@ import { Component, ViewChild } from "@angular/core";
 //import { ModalDirective } from 'ng2-bootstrap';
 
 @Component({
-	selector: 'carousel-demo',
+	selector: 'img-gallery',
 	template: `
-<div class="row" >
-  <div class="col-md-8">
-    <carousel [noWrap]="noWrapSlides">
-      <slide *ngFor="let slidez of slides; let index=index"
-             [active]="slidez.active">
-        <img [src]="slidez.image" style="margin:auto;width: 100%" (dblclick)="lgModal.show()">
-      </slide>
-    </carousel>
-  </div>
+<div class="row" (click)="lgModal.show()">
+	<div class="col-md-6">
+		<img src="../images/img-bottom-right.png" style="height: 25%;width: 100%">
+	</div>
+	<div class="col-md-6">
+		<img src="../images/img-top-right.png" style="height: 25%;width: 100%">
+	</div>
 </div>
-
-<button class="btn btn-primary" (click)="lgModal.show()">Large modal</button>
  
 <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -27,45 +23,46 @@ import { Component, ViewChild } from "@angular/core";
         <h4 class="modal-title">Отчет</h4>
       </div>
       <div class="modal-body">
-<div class="row">
-  <div class="col-md-12">
-    <carousel [noWrap]="noWrapSlides">
-      <slide *ngFor="let slidez of slides; let index=index"
-             [active]="slidez.active">
-        <img [src]="slidez.image" style="margin:auto;height: 80%;width: 100%">
-      </slide>
-    </carousel>
-  </div>
-</div>
+		<div class="row">
+		  <div class="col-md-12">
+			<carousel [noWrap]="noWrapSlides">
+			  <slide *ngFor="let slidez of slides; let index=index"
+					 [active]="slidez.active">
+				<img [src]="slidez.image" style="margin:auto;width: 100%" class="col-md-12">
+			  </slide>
+			</carousel>
+		  </div>
+		</div>
       </div>
     </div>
   </div>
 </div>
-<video width="352" height="198" controls>
+<!--<video width="352" height="198" controls>
     <source src="http://live.netd.com.tr/S1/HLS_LIVE/dreamtv/index.m3u8" type="application/x-mpegURL">
 </video>
 <object type="application/x-shockwave-flash" id="movie" name="movie" data="http://www.zonytvcom.info/saki2/player/player-licensed.swf" width="960" height="570">
-</object>
+</object>-->
 `
 	
 })
-export class CarouselComponent {
+export class ImageGallery {
 	public myInterval:number = 5000;
 	public noWrapSlides:boolean = false;
 	public slides:Array<any> = [];
 	//@ViewChild('lgModal') public childModal:any;
 	public constructor() {
-		for (let i = 0; i < 4; i++) {
-			this.addSlide();
-		}
+		this.addSlide('../images/img-bottom-right.png');
+		this.addSlide('../images/img-top-right.png');
+		// for (let i = 0; i < 4; i++) {
+		// 	this.addSlide();
+		// }
 	}
 	
-	public addSlide():void {
+	public addSlide(url: string):void {
 		let newWidth = 600 + this.slides.length + 1;
 		this.slides.push({
-			image: `//placekitten.com/${newWidth}/300`,
-			text: `${['More', 'Extra', 'Lots of', 'Surplus'][this.slides.length % 4]}
-      ${['Cats', 'Kittys', 'Felines', 'Cutes'][this.slides.length % 4]}`,
+			image: url,
+			text: '',
 			active: false
 		});
 	}

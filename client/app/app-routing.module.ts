@@ -5,7 +5,7 @@ import {ProjectDetailComponent} from "./project-detail.component";
 import {PageNotFoundComponent} from "./page-not-found.component";
 import { GanttComponent } from  "./gantt.component";
 import { HChartComponent} from './hchart.component';
-import {CarouselComponent} from "./carousel-img.component";
+import {ImageGallery} from "./img-gallery.component";
 
 const appRoutes: Routes = [
 	{
@@ -18,7 +18,7 @@ const appRoutes: Routes = [
 	},
 	{
 		path: 'carousel',
-		component: CarouselComponent,
+		component: ImageGallery,
 	},
 	{
 		path: 'gantt',
