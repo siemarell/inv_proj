@@ -24,7 +24,11 @@
       "coordinates": [
         37.7558,
         55.6173
-      ]
+      ],
+      "images": [
+        "../images/img-bottom-right.png",
+        "../images/img-top-right.png"],
+      "stream": "http://62.117.66.226:5078/axis-cgi/mjpg/video.cgi?resolution=704x576&dummy=1478856081338"
     },
     {
       "id": 12,

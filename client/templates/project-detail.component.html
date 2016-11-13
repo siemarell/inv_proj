@@ -6,10 +6,10 @@
             </div>
         </div>
         <div class="col-xs-12 col-md-6 left-side">
-            <img-gallery ></img-gallery>
+            <img-gallery [project]="project"></img-gallery>
             <div class="row">
                 <div class="col-md-6">
-                    <img class="imageTmp" src="../images/img-bottom-left.png">
+                    <img class="imageTmp" src={{(project)?.stream}}>
                 </div>
                 <div class="col-md-6 omap">
                     <olmap [projects]="[project]" [selectedProject]="selectedProject"></olmap>

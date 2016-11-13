@@ -14,4 +14,6 @@ export interface Project {
 	periodSumCurrency : string;
 	descriptions: string[];
 	coordinates?: [number,number];
+	images?: string[],
+	stream?: string
 }

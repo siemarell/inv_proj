@@ -1,4 +1,5 @@
-import { Component, ViewChild } from "@angular/core";
+import {Component, ViewChild, Input, OnChanges, SimpleChanges} from "@angular/core";
+import {Project} from "./project";
 //import { ModalDirective } from 'ng2-bootstrap';
 
 @Component({
@@ -45,19 +46,30 @@ import { Component, ViewChild } from "@angular/core";
 `
 	
 })
-export class ImageGallery {
+export class ImageGallery implements OnChanges{
+	@Input() project: Project;
 	public myInterval:number = 5000;
 	public noWrapSlides:boolean = false;
 	public slides:Array<any> = [];
 	//@ViewChild('lgModal') public childModal:any;
 	public constructor() {
-		this.addSlide('../images/img-bottom-right.png');
-		this.addSlide('../images/img-top-right.png');
-		// for (let i = 0; i < 4; i++) {
-		// 	this.addSlide();
-		// }
+		//this.addSlide('../images/img-bottom-right.png');
+		//this.addSlide('../images/img-top-right.png');
+
 	}
-	
+
+
+	ngOnChanges(changes: SimpleChanges): void {
+		if (changes['project'] && !changes['project'].isFirstChange()){
+			this.slides = [];
+			for (let image of this.project.images) {
+				this.addSlide(image);
+				console.log(image);
+			}
+
+		}
+	}
+
 	public addSlide(url: string):void {
 		let newWidth = 600 + this.slides.length + 1;
 		this.slides.push({
