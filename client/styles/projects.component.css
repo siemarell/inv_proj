@@ -1,7 +1,7 @@
-*{
+/*{
     font-family: sans-serif;
 }
-
+*/
 .head-name{
     margin: 10px 0px 0px 10px;
     font-size: 30px;
@@ -56,15 +56,17 @@ hr{
 
 #left{
     width: 40%;
-    height: 98%;
-    border: 1px solid;
+    height: 96%;
+    /*border: 1px solid;*/
     float: left;
 }
 
 #right{
-    width: 58%;
-    height: 98%;
-    border: 1px solid;
+    width: 56%;
+    height: 94%;
+    margin-top: 2%;
+    margin-left: 2%;
+    /*border: 1px solid;*/
     float: left;
 }
 
