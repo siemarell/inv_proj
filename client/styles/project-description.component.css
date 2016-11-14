@@ -1,5 +1,24 @@
 /* Initiators */
 
+.parent-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.vertical-align-middle{
+    display: flex;
+    align-items: center;
+    /*justify-content: center;*/
+}
+
+.horizontal-align-start{
+    justify-content: flex-start;
+}
+
+.horizontal-align-end{
+    justify-content: flex-end;
+}
+
 .initiators{
     display: table;
     padding-bottom: 10px;
@@ -7,48 +26,38 @@
 }
 
 .initiators-section-name{
-    display: table-cell;
-    vertical-align: middle;
     font-size: 12px;
     font-weight: bold;
-    width: 150px;
+    border-right: 2px solid gray;
 }
 
 .initiators-name{
-    display: table-cell;
-    vertical-align: middle;
     font-size: 12px;
-    border-left: 2px solid gray;
-    padding-left: 10px;
 }
 
 
 /* Category */
 
 .categories{
-    display: table;
     padding-bottom: 10px;
     padding-left: 10px;
+    width: 100%;
+    border: 1px black solid;
+    table-layout: fixed;
 }
 
 .category-name{
-    display: table-cell;
-    vertical-align: middle;
     font-size: 12px;
     font-weight: bold;
-    width: 150px;
     border-bottom: 2px solid gray;
     border-right: 2px solid gray;
 }
 
 .category-value{
-    display: table-cell;
-    vertical-align: middle;
     font-size: 22px;
     font-weight: bold;
-    padding-left: 10px;
+    /*padding-left: 10px;*/
     border-bottom: 2px solid gray;
-    width: 100px;
 }
 
 .category-value .currency{
@@ -58,25 +67,11 @@
 
 /* Project Description */
 
-.project-descriptions{
-    display: table;
-    padding-bottom: 10px;
-    padding-left: 10px;
-}
-
 .project-description{
-    display: table-row;
     font-size: 12px;
 }
 
-
-/* Main Section Name*/
-
 .main-section-name{
-    padding-left: 10px;
-}
-
-.main-section-name div{
     margin-bottom: 5px;
     font-weight: bold;
     font-size: 15px;
@@ -87,6 +82,31 @@
     font-size: 25px;
 }
 
-:host[page-name="detail"] .project-name {
+:host[page-name="detail"] .project-name{
+    font-size: 2.5em;
+    font-weight: bold;
+}
 
+:host[page-name="detail"] .initiators-section-name{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+:host[page-name="detail"] .main-section-name{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+:host[page-name="detail"] .category{
+    font-weight: bold;
+}
+
+
+:host[page-name="detail"] .initiators-name , .project-description, .category-name{
+    font-size: 1.5em;
+}
+
+:host[page-name="detail"] .categories {
+    font-size: 200%;
+    color: red;
 }

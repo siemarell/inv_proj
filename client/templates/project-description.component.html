@@ -1,54 +1,127 @@
-<div class="project">
-        <!--<hr>-->
-        <div class="project-name" (click)="goToDetail(project)">{{project.name}}</div>
-        <div class="main-section-name">
-            <div>{{project.region}}</div>
+<!--<div class="project">-->
+        <!--&lt;!&ndash;<hr>&ndash;&gt;-->
+        <!--<div class="project-name" (click)="goToDetail(project)">{{project.name}}</div>-->
+        <!--<div class="main-section-name">-->
+            <!--<span>{{project.region}}</span>-->
+        <!--</div>-->
+        <!--<div class="initiators">-->
+            <!--<div class="initiators-section-name">-->
+                <!--<span>Инициаторы проекта</span>-->
+            <!--</div>-->
+            <!--<div class="initiators-name">-->
+                <!--<div *ngFor="let initiatorName of project.initiators">{{initiatorName}}</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="main-section-name">-->
+            <!--<span>{{project.industry}}</span>-->
+        <!--</div>-->
+        <!--<div class="categories">-->
+            <!--<div class="category">-->
+                <!--<div class="category-name">Сумма инвестиций</div>-->
+                <!--<div class="category-value" style="border: 1px black solid">-->
+                    <!--<span>{{project.investmentsSumValue}}</span>-->
+                    <!--<span class="currency">{{project.investmentsSumCurrency}}</span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="category">-->
+                <!--<div class="category-name">Период окупаемости бюджета</div>-->
+                <!--<div class="category-value">-->
+                    <!--<span>{{project.paybackSumValue}}</span>-->
+                    <!--<span class="currency">{{project.paybackSumCurrency}}</span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="category">-->
+                <!--<div class="category-name">Внутренняя норма доходности бюджета</div>-->
+                <!--<div class="category-value">-->
+                    <!--<span>{{project.normalSumValue}}</span>-->
+                    <!--<span class="currency">{{project.normalSumCurrency}}</span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="category">-->
+                <!--<div class="category-name">Дисконтируемый период окупаемости бюджета</div>-->
+                <!--<div class="category-value">-->
+                    <!--<span>{{project.periodSumValue}}</span>-->
+                    <!--<span class="currency">{{project.periodSumCurrency}}</span>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="main-section-name">-->
+            <!--<span>Этапы реализации проекта</span>-->
+        <!--</div>-->
+        <!--<div class="project-descriptions">-->
+            <!--<div *ngFor="let description of project.descriptions" class="project-description">{{description}}</div>-->
+        <!--</div>-->
+<!--</div>-->
+
+
+<div class="container-fluid">
+    <!-- PROJECT NAME -->
+    <div class="row parent-container main-section-name">
+        <div class="col-md-12 vertical-align-middle" (click)="goToDetail(project)">{{project.name}}</div>
+    </div>
+
+    <!-- PROJECT REGION -->
+    <div class="row parent-container main-section-name">
+        <div class="col-md-12 vertical-align-middle">{{project.region}}</div>
+    </div>
+
+    <!-- PROJECT INITIATORS -->
+    <div class="row parent-container">
+        <div class="col-xs-4 vertical-align-middle initiators-section-name">Инициаторы проекта</div>
+        <div class="col-xs-6">
+            <div class="vertical-align-middle initiators-name" *ngFor="let initiatorName of project.initiators">{{initiatorName}}</div>
         </div>
-        <div class="initiators">
-            <div class="initiators-section-name">
-                <span>Инициаторы проекта</span>
-            </div>
-            <div class="initiators-name">
-                <div *ngFor="let initiatorName of project.initiators">{{initiatorName}}</div>
-            </div>
-        </div>
-        <div class="main-section-name">
+    </div>
+
+    <!-- PROJECT INDUSTRY -->
+    <div class="row parent-container main-section-name">
+        <div class="col-md-12 vertical-align-middle">
             <div>{{project.industry}}</div>
         </div>
-        <div class="categories">
-            <div class="category">
-                <div class="category-name">Сумма инвестиций</div>
-                <div class="category-value">
-                    <span>{{project.investmentsSumValue}}</span>
-                    <span class="currency">{{project.investmentsSumCurrency}}</span>
-                </div>
+    </div>
+
+    <!-- PROJECT CATEGORIES -->
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row parent-container">
+                <div class="col-xs-4 text-left vertical-align-middle category-name">Сумма инвестиций</div>
+                <div class="col-xs-1 vertical-align-middle horizontal-align-end category-value">{{project.investmentsSumValue}}</div>
+                <div class="col-xs-2 vertical-align-middle horizontal-align-start category-value">{{project.investmentsSumCurrency}}</div>
             </div>
-            <div class="category">
-                <div class="category-name">Период окупаемости бюджета</div>
-                <div class="category-value">
-                    <span>{{project.paybackSumValue}}</span>
-                    <span class="currency">{{project.paybackSumCurrency}}</span>
-                </div>
+            <div class="row parent-container">
+                <div class="col-xs-4 category-name">Период окупаемости бюджета</div>
+                <div class="col-xs-1 vertical-align-middle horizontal-align-end category-value">{{project.paybackSumValue}}</div>
+                <div class="col-xs-2 vertical-align-middle horizontal-align-start category-value">{{project.paybackSumCurrency}}</div>
             </div>
-            <div class="category">
-                <div class="category-name">Внутренняя норма доходности бюджеьа</div>
-                <div class="category-value">
-                    <span>{{project.normalSumValue}}</span>
-                    <span class="currency">{{project.normalSumCurrency}}</span>
-                </div>
+            <div class="row parent-container">
+                <div class="col-xs-4 text-left vertical-align-middle category-name">Внутренняя норма доходности бюджета</div>
+                <div class="col-xs-1 vertical-align-middle horizontal-align-end category-value">{{project.normalSumValue}}</div>
+                <div class="col-xs-2 vertical-align-middle horizontal-align-start category-value">{{project.normalSumCurrency}}</div>
             </div>
-            <div class="category">
-                <div class="category-name">Дисконтируемый период окупаемости бюджета</div>
-                <div class="category-value">
-                    <span>{{project.periodSumValue}}</span>
-                    <span class="currency">{{project.periodSumCurrency}}</span>
-                </div>
+            <div class="row parent-container">
+                <div class="col-xs-4 text-left vertical-align-middle category-name">Дисконтируемый период окупаемости бюджета</div>
+                <div class="col-xs-1 vertical-align-middle horizontal-align-end category-value">{{project.periodSumValue}}</div>
+                <div class="col-xs-2 vertical-align-middle horizontal-align-start category-value">{{project.periodSumCurrency}}</div>
             </div>
         </div>
-        <div class="main-section-name">
+    </div>
+
+    <!-- PROJECT REALIZATION HEADING-->
+    <div class="row main-section-name">
+        <div class="col-md-12">
             <div>Этапы реализации проекта</div>
         </div>
-        <div class="project-descriptions">
-            <div *ngFor="let description of project.descriptions" class="project-description">{{description}}</div>
+    </div>
+
+    <!-- PROJECT REALIZATIONS DESCRIPTIONS -->
+    <div class="row parent-container project-description">
+        <div class="col-xs-12">
+            <div class="row" *ngFor="let description of project.descriptions">
+                <div class="col-xs-12">
+                    {{description}}
+                </div>
+            </div>
         </div>
+    </div>
+
 </div>
