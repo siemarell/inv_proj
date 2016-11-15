@@ -1,4 +1,4 @@
-/* Initiators */
+
 
 .parent-container{
     display: flex;
@@ -8,7 +8,20 @@
 .vertical-align-middle{
     display: flex;
     align-items: center;
-    /*justify-content: center;*/
+}
+
+.vertical-align-bottom{
+    display: flex;
+    align-items: flex-end;
+}
+
+.vertical-align-top{
+    display: flex;
+    align-items: flex-start;
+}
+
+.BBorder{
+    border-bottom: 2px solid gainsboro;
 }
 
 .horizontal-align-start{
@@ -19,16 +32,12 @@
     justify-content: flex-end;
 }
 
-.initiators{
-    display: table;
-    padding-bottom: 10px;
-    padding-left: 10px;
-}
+/* Initiators */
 
 .initiators-section-name{
     font-size: 12px;
     font-weight: bold;
-    border-right: 2px solid gray;
+    border-right: 2px solid gainsboro;
 }
 
 .initiators-name{
@@ -38,75 +47,75 @@
 
 /* Category */
 
-.categories{
-    padding-bottom: 10px;
-    padding-left: 10px;
-    width: 100%;
-    border: 1px black solid;
-    table-layout: fixed;
-}
-
 .category-name{
     font-size: 12px;
     font-weight: bold;
-    border-bottom: 2px solid gray;
-    border-right: 2px solid gray;
+    border-bottom: 2px solid gainsboro;
+    border-right: 2px solid gainsboro;
 }
 
 .category-value{
-    font-size: 22px;
+    font-size: 30px;
+}
+
+.category-currency{
     font-weight: bold;
-    /*padding-left: 10px;*/
-    border-bottom: 2px solid gray;
+    font-size: 11px;
 }
-
-.category-value .currency{
-    font-size: 12px;
-}
-
 
 /* Project Description */
 
 .project-description{
-    font-size: 12px;
-}
-
-.main-section-name{
-    margin-bottom: 5px;
-    font-weight: bold;
     font-size: 15px;
 }
 
+.main-section-name{
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px 0 5px 0;
+}
+
 .project-name{
-    padding: 10px 10px 5px 10px;
     font-size: 25px;
 }
 
 :host[page-name="detail"] .project-name{
-    font-size: 2.5em;
-    font-weight: bold;
-}
-
-:host[page-name="detail"] .initiators-section-name{
-    font-size: 1.5em;
+    font-size: 250%;
     font-weight: bold;
 }
 
 :host[page-name="detail"] .main-section-name{
-    font-size: 1.5em;
+    font-size: 150%;
+}
+
+:host[page-name="detail"] .initiators-section-name{
+    font-size: 130%;
     font-weight: bold;
 }
 
-:host[page-name="detail"] .category{
+:host[page-name="detail"] .initiators-name{
+    font-size: 1.3em;
+}
+
+:host[page-name="detail"] .category-name{
+    font-size: 1.3em;
     font-weight: bold;
 }
 
+:host[page-name="detail"] .category-value{
+    font-size: 3.5em;
+}
 
-:host[page-name="detail"] .initiators-name , .project-description, .category-name{
+:host[page-name="detail"] .category-currency{
     font-size: 1.5em;
 }
 
-:host[page-name="detail"] .categories {
-    font-size: 200%;
-    color: red;
+
+:host[page-name="detail"] .project-description{
+    font-size: 130%;
 }
+
+/*:host[page-name="detail"] .categories {*/
+    /*font-size: 200%;*/
+    /*color: red;*/
+/*}*/

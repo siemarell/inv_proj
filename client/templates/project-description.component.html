@@ -56,8 +56,8 @@
 
 <div class="container-fluid">
     <!-- PROJECT NAME -->
-    <div class="row parent-container main-section-name">
-        <div class="col-md-12 vertical-align-middle" (click)="goToDetail(project)">{{project.name}}</div>
+    <div class="row parent-container">
+        <div class="col-md-12 vertical-align-middle project-name" (click)="goToDetail(project)">{{project.name}}</div>
     </div>
 
     <!-- PROJECT REGION -->
@@ -67,7 +67,7 @@
 
     <!-- PROJECT INITIATORS -->
     <div class="row parent-container">
-        <div class="col-xs-4 vertical-align-middle initiators-section-name">Инициаторы проекта</div>
+        <div class="col-xs-3 vertical-align-middle initiators-section-name">Инициаторы <br>проекта</div>
         <div class="col-xs-6">
             <div class="vertical-align-middle initiators-name" *ngFor="let initiatorName of project.initiators">{{initiatorName}}</div>
         </div>
@@ -84,24 +84,36 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="row parent-container">
-                <div class="col-xs-4 text-left vertical-align-middle category-name">Сумма инвестиций</div>
-                <div class="col-xs-1 vertical-align-middle horizontal-align-end category-value">{{project.investmentsSumValue}}</div>
-                <div class="col-xs-2 vertical-align-middle horizontal-align-start category-value">{{project.investmentsSumCurrency}}</div>
+                <div class="col-xs-4 category-name vertical-align-middle">Сумма <br> инвестиций</div>
+                <div class="col-xs-4 parent-container horizontal-align-start BBorder">
+                    <span class="category-value">{{project.investmentsSumValue}}</span>
+                    &nbsp;
+                    <span class="category-currency vertical-align-middle">{{project.investmentsSumCurrency}}</span>
+                </div>
             </div>
             <div class="row parent-container">
-                <div class="col-xs-4 category-name">Период окупаемости бюджета</div>
-                <div class="col-xs-1 vertical-align-middle horizontal-align-end category-value">{{project.paybackSumValue}}</div>
-                <div class="col-xs-2 vertical-align-middle horizontal-align-start category-value">{{project.paybackSumCurrency}}</div>
+                <div class="col-xs-4 category-name vertical-align-middle">Период окупаемости <br> бюджета</div>
+                <div class="col-xs-4 parent-container horizontal-align-start BBorder">
+                    <span class="category-value">{{project.paybackSumValue}}</span>
+                    &nbsp;
+                    <span class="category-currency vertical-align-middle">{{project.paybackSumCurrency}}</span>
+                </div>
             </div>
             <div class="row parent-container">
-                <div class="col-xs-4 text-left vertical-align-middle category-name">Внутренняя норма доходности бюджета</div>
-                <div class="col-xs-1 vertical-align-middle horizontal-align-end category-value">{{project.normalSumValue}}</div>
-                <div class="col-xs-2 vertical-align-middle horizontal-align-start category-value">{{project.normalSumCurrency}}</div>
+                <div class="col-xs-4 category-name vertical-align-middle">Внутренняя норма <br> доходности бюджета</div>
+                <div class="col-xs-4 parent-container horizontal-align-start BBorder">
+                    <span class="category-value">{{project.normalSumValue}}</span>
+                    &nbsp;
+                    <span class="category-currency vertical-align-middle">{{project.normalSumCurrency}}</span>
+                </div>
             </div>
             <div class="row parent-container">
-                <div class="col-xs-4 text-left vertical-align-middle category-name">Дисконтируемый период окупаемости бюджета</div>
-                <div class="col-xs-1 vertical-align-middle horizontal-align-end category-value">{{project.periodSumValue}}</div>
-                <div class="col-xs-2 vertical-align-middle horizontal-align-start category-value">{{project.periodSumCurrency}}</div>
+                <div class="col-xs-4 category-name vertical-align-middle">Дисконтируемый период <br> окупаемости бюджета</div>
+                <div class="col-xs-4 parent-container horizontal-align-start BBorder">
+                    <span class="category-value">{{project.periodSumValue}}</span>
+                    &nbsp;
+                    <span class="category-currency vertical-align-middle">{{project.periodSumCurrency}}</span>
+                </div>
             </div>
         </div>
     </div>
