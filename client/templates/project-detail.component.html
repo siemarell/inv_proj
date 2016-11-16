@@ -1,27 +1,29 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-12 col-md-6 project-description">
-            <div *ngIf="project != undefined">
+        <div class="right-wrapper col-md-6">
+            <div *ngIf="project != undefined" class="col-md-12">
                 <project-description page-name="detail" [project]="project"></project-description>
             </div>
-        </div>
-        <div class="col-xs-12 col-md-6 left-side">
-            <img-gallery [project]="project"></img-gallery>
-            <div class="row">
-                <div class="col-md-6">
-                    <img class="imageTmp" src={{(project)?.stream}}>
-                </div>
-                <div class="col-md-6 omap">
-                    <olmap [projects]="[project]" [selectedProject]="selectedProject"></olmap>
-                </div>
+            <div class="col-md-12 hchart">
+                <detail-page-chart></detail-page-chart>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-md-6 hchart"><detail-page-chart></detail-page-chart></div>
-        <div class="col-xs-12 col-md-6 gantt">
-            <div>Мониторинг реализации проекта</div>
-            <gantt></gantt>
+        <div class="left-wrapper col-md-6">
+            <div class="col-md-12 left-side">
+                <img-gallery [project]="project"></img-gallery>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img class="imageTmp" src={{(project)?.stream}}>
+                    </div>
+                    <div class="col-md-6 omap">
+                        <olmap [projects]="[project]" [selectedProject]="selectedProject"></olmap>
+                    </div>
+                </div>
+                <div class="col-md-12 gantt">
+                    <div>Мониторинг реализации проекта</div>
+                    <gantt></gantt>
+                </div>
+            </div>
         </div>
     </div>
 </div>
