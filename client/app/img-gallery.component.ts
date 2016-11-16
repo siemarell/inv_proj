@@ -6,10 +6,10 @@ import {Project} from "./project";
 	selector: 'img-gallery',
 	template: `
 <div class="row" (click)="lgModal.show()">
-	<div class="col-md-6">
+	<div class="col-md-6" style="padding: 0px 7px 0px 0px; margin: 0px 0px 7px 0px">
 		<img src="../images/img-bottom-right.png" style="height: 25%;width: 100%">
 	</div>
-	<div class="col-md-6">
+	<div class="col-md-6" style="padding: 0px 0px 0px 7px; margin: 0px 0px 7px 0px">
 		<img src="../images/img-top-right.png" style="height: 25%;width: 100%">
 	</div>
 </div>

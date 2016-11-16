@@ -117,7 +117,6 @@
     line-height: 1em;
 }
 
-
 :host[page-name="detail"] .project-description{
     font-size: 130%;
     line-height: 1em;
