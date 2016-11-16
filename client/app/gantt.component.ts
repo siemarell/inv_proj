@@ -5,7 +5,7 @@ import 'dhtmlxgantt';
 	selector: 'gantt',
 	template: `<div id="gantt" class="col-md-12" style="height: 100%; width: 100%; margin: 0px 0px 0px 0px; padding: 0px"></div>`,
 	encapsulation: ViewEncapsulation.None,
-	styleUrls: ['node_modules/dhtmlx-gantt/codebase/dhtmlxgantt.css']
+	styleUrls: ['node_modules/dhtmlx-gantt/codebase/dhtmlxgantt.css', 'styles/gantt.component.css' ]
 })
 export class GanttComponent implements OnInit, OnChanges{
 	
@@ -43,8 +43,8 @@ export class GanttComponent implements OnInit, OnChanges{
 		gantt.config.columns = [
             {
                 name: "progress",
-                label: "",
-                width : 50,
+                label: "ЗАДАЧА",
+                width : 70,
                 template : function(item){
                     if (item >= 1){
                         return "Закончен"
@@ -57,7 +57,7 @@ export class GanttComponent implements OnInit, OnChanges{
             },
             {
                 name : "text",
-                label : "ЗАДАЧА",
+                label : " ",
                 tree : false,
                 width : '*',
                 align : "center"
@@ -66,7 +66,14 @@ export class GanttComponent implements OnInit, OnChanges{
 
         gantt.config.scale_unit = "month";
         gantt.config.date_scale = "%d.%m";
+        gantt.config.show_progress = false;
+        // gantt.config.start_date = new Date(2016, 4, 31);
         //gantt.config.scale_height = 60;
+
+        gantt.templates.task_text = function (start, end, task) {
+          return '';
+        };
+
 		gantt.config.readonly = true;
 		gantt.init('gantt');
 	//	gantt.setSizes();

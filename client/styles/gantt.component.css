@@ -1,0 +1,45 @@
+.gantt_container{
+    border: 0px black solid;
+}
+
+.gantt_grid{
+    border-right: 0px solid #dddddd;
+}
+
+.gantt_row{
+    border-bottom: 0px solid #dddddd;
+}
+
+.gantt_cell, .gantt_last_cell{
+    font-size: 15px;
+}
+
+.gantt_task_cell{
+    border-right: 0px solid #dddddd;
+}
+
+.gantt_scale_cell{
+    border-right: 1px solid #dddddd;
+}
+
+.gantt_grid_scale{
+    border: 0px black solid;
+    background-color: #dddddd;
+    padding-left: 5px;
+    font-size: 15px;
+    width: 100%;
+}
+
+.gantt_task_scale{
+    border: 0px black solid;
+    background-color: #dddddd;
+    font-size: 15px;
+}
+
+.gantt_task_line {
+    background-color: #4d4cff;
+    border-radius: 0;
+}
+/*.gantt_task_progress{*/
+    /*background-color: #4d4cff;*/
+/*}*/
