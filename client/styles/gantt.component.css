@@ -40,6 +40,11 @@
     background-color: #4d4cff;
     border-radius: 0;
 }
-/*.gantt_task_progress{*/
-    /*background-color: #4d4cff;*/
-/*}*/
+
+.gantt_cell .gantt_tree_content{
+    color: #4d4cff;
+}
+
+.gantt_last_cell .gantt_tree_content{
+    color: #454545;
+}
