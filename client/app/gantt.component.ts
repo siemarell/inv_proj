@@ -31,7 +31,7 @@ export class GanttComponent implements OnInit, OnChanges{
 
         this.route.params.forEach((params: Params) => {
             let id = +params['id'];
-            this.projectsService.getTasks(id).then(tasks => this.createGantt(tasks));
+            this.projectsService.getTasks(id).then(tasks => {console.log(tasks);this.createGantt(tasks)});
         });
 
 

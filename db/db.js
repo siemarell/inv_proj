@@ -10,7 +10,9 @@ Database.prototype.getProjects = function () {
 };
 
 Database.prototype.getTasks = function (projectId) {
-    return this.data.tasks.filter( x => x.projectId == projectId);
+    var data = this.data.projects.filter( x => x.id == projectId);
+    if (data) return data[0].tasks;
+    return [];
 };
 
 Database.prototype.getData = function () {

@@ -6,7 +6,7 @@ export interface Task {
     id: number;
     projectId: number;
     text: string;
-    startDate: string;
+    start_date: string;
     duration: number;
     progress : number;
     open: boolean;
