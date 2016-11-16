@@ -82,40 +82,52 @@
 :host[page-name="detail"] .project-name{
     font-size: 250%;
     font-weight: bold;
+    line-height: 1em;
 }
 
 :host[page-name="detail"] .main-section-name{
     font-size: 150%;
+    line-height: 1em;
 }
 
 :host[page-name="detail"] .initiators-section-name{
     font-size: 130%;
     font-weight: bold;
+    line-height: 1em;
 }
 
 :host[page-name="detail"] .initiators-name{
     font-size: 1.3em;
+    line-height: 1em;
 }
 
 :host[page-name="detail"] .category-name{
     font-size: 1.3em;
     font-weight: bold;
+    line-height: 1em;
 }
 
 :host[page-name="detail"] .category-value{
     font-size: 3.5em;
+    line-height: 1em;
 }
 
 :host[page-name="detail"] .category-currency{
     font-size: 1.5em;
+    line-height: 1em;
 }
 
 
 :host[page-name="detail"] .project-description{
     font-size: 130%;
+    line-height: 1em;
 }
 
-/*:host[page-name="detail"] .categories {*/
-    /*font-size: 200%;*/
-    /*color: red;*/
-/*}*/
+:host[page-name="detail"] .projects, .industry-category, .realization-description{
+    padding-bottom: 10px;
+}
+
+:host[page-name="detail"] .projects .main-section-name, .industry-category .main-section-name, .realization-description .main-section-name{
+    padding-bottom: 10px;
+}
+
