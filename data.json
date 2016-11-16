@@ -1,4 +1,22 @@
-{
+{  "tasks":[
+  {
+    "id": 1,
+    "projectId": 11,
+    "text": "Подготовительные работы",
+    "startDate": "01.04.2016",
+    "duration": 11,
+    "progress": 0.6,
+    "open": true
+  },{
+    "id": 2,
+    "projectId": 11,
+    "text": "Монтаж металлоконструкций",
+    "startDate": "04.04.2016",
+    "duration": 5,
+    "progress": 0.1,
+    "open": true
+  }
+],
   "projects": [
     {
       "id": 11,
@@ -29,6 +47,7 @@
         "../images/img-bottom-right.png",
         "../images/img-top-right.png"],
       "stream": "http://62.117.66.226:5078/axis-cgi/mjpg/video.cgi?resolution=704x576&dummy=1478856081338"
+
     },
     {
       "id": 12,

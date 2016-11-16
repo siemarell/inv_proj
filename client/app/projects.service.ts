@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Project} from "./project";
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import {Task} from "./task";
 
 @Injectable()
 export class ProjectsService {
@@ -12,12 +13,19 @@ export class ProjectsService {
 	getProjects(): Promise<Project[]>{
 		  return this.http.get(this.projectsUrl)
 			  .toPromise()
-			  .then(response => response.json().projects as Project[])
+			  .then(response => response.json() as Project[])
 			  .catch(this.handleError);
 	}
 	
 	getProject(id: number): Promise<Project> {
 		return this.getProjects().then(projects => projects.find(project => project.id === id))
+	}
+
+	getTasks(projectId : number): Promise<Task[]>{
+		return this.http.get(this.projectsUrl + "/" + projectId)
+			.toPromise()
+			.then(response => response.json() as Task[])
+			.catch(this.handleError);
 	}
 	
 	private handleError(error: any): Promise<any> {
