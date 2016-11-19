@@ -2,6 +2,7 @@
 /node_modules/
 /client/node_modules/
 .idea/
+.vscode/
 /client/app/*.js
 /client/app/*.map
 .DS_Store
