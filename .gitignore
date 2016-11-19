@@ -4,3 +4,5 @@
 .idea/
 /client/app/*.js
 /client/app/*.map
+.DS_Store
+Thumbs.db
