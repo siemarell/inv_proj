@@ -10,23 +10,38 @@ import * as ol from 'openlayers';
     `
 })
 export class OlMap implements OnInit, OnChanges{
-	@Input() projects: Project[];
-	@Input() selectedProject: Project;
+	@Input()
+	set selectedProject(value: Project) {
+		if (value){
+			this._selectedProject = value;
+			this.centerOnProject(value);
+		}
+	}
+	@Input()
+	set projects(value: Project[]) {
+		if (value){
+			this._projects = value;
+			this.redrawFeatures();
+			this.extentToFeatures();
+		}
+	}
+	private _projects: Project[];
+	private _selectedProject: Project;
 	map: ol.Map;
 	extentControl = new ExtentControl();
 	features: ol.Feature[] = [];
 	featuresLayer: ol.layer.Vector;
 	
 	ngOnChanges(changes: SimpleChanges):void{
-		if (changes['projects'] && !changes['projects'].isFirstChange()){
-			//console.log(changes['projects'].currentValue);
-			this.redrawFeatures();
-			this.extentToFeatures();
-		}
-		if (changes['selectedProject'] && !changes['selectedProject'].isFirstChange()){
-			//console.log(changes);
-			this.centerOnProject(changes['selectedProject'].currentValue);
-		}
+		// if (changes['_projects'] && !changes['_projects'].isFirstChange()){
+		// 	//console.log(changes['projects'].currentValue);
+		// 	this.redrawFeatures();
+		// 	this.extentToFeatures();
+		// }
+		// if (changes['_selectedProject'] && !changes['_selectedProject'].isFirstChange()){
+		// 	//console.log(changes);
+		// 	this.centerOnProject(changes['_selectedProject'].currentValue);
+		// }
 	}
 	
 	ngOnInit():void{
@@ -64,7 +79,7 @@ export class OlMap implements OnInit, OnChanges{
 		this.map.removeLayer(this.featuresLayer);
 		
 		//Map projects into ol.features
-		var features: ol.Feature[] = this.projects
+		var features: ol.Feature[] = this._projects
 			.filter(project => {
 				return project.coordinates!=undefined;
 			})
@@ -92,11 +107,11 @@ export class OlMap implements OnInit, OnChanges{
 	}
 	
 	private extentToFeatures():void{
-		switch (this.projects.length){
+		switch (this._projects.length){
 			case 0:
 				break;
 			case 1:
-				this.centerOnProject(this.projects[0]);
+				this.centerOnProject(this._projects[0]);
 				break;
 			default:
 				var extent = ol.extent.createEmpty();
