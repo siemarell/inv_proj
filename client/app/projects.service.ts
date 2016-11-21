@@ -3,6 +3,7 @@ import {Project} from "./project";
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import {Task} from "./task";
+import {HighchartsData} from './highcharts-data';
 
 @Injectable()
 export class ProjectsService {
@@ -22,9 +23,16 @@ export class ProjectsService {
 	}
 
 	getTasks(projectId : number): Promise<Task[]>{
-		return this.http.get(this.projectsUrl + "/" + projectId)
+		return this.http.get(this.projectsUrl + "/" + projectId +"/gantt")
 			.toPromise()
 			.then(response => response.json() as Task[])
+			.catch(this.handleError);
+	}
+
+	getHighchartsData(projectId : number): Promise<HighchartsData[]>{
+		return this.http.get(this.projectsUrl + "/" + projectId + "/hchart")
+			.toPromise()
+			.then(response => response.json() as HighchartsData[])
 			.catch(this.handleError);
 	}
 	

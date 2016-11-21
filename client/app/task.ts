@@ -4,10 +4,10 @@
 
 export interface Task {
     id: number;
-    projectId: number;
     text: string;
     start_date: string;
     duration: number;
     progress : number;
     open: boolean;
+    projectId: number;
 }

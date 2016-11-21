@@ -15,6 +15,12 @@ Database.prototype.getTasks = function (projectId) {
     return [];
 };
 
+Database.prototype.getHData = function (projectId) {
+    var data = this.data.projects.filter( x => x.id == projectId);
+    if (data) return data[0].hData;
+    return [];
+};
+
 Database.prototype.getData = function () {
     return this.data;
 };

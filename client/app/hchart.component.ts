@@ -1,15 +1,37 @@
-import { Component } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation, OnChanges, SimpleChanges } from "@angular/core";
+import {HighchartsData} from './highcharts-data';
+import {ProjectsService} from "./projects.service";
+import { ActivatedRoute, Params} from '@angular/router';
 
 @Component({
 	selector: 'detail-page-chart',
-	template: `	<chart [options]="options" class="col-md-12"></chart>
-`
+	template: `	<chart [options]="options" class="col-md-12" style="height: 100%;"></chart>`
 })
-export class HChartComponent {
+export class HChartComponent implements OnInit{
 	options: Object;
-	constructor(){
-		this.options = {
-			title : {
+    hData: HighchartsData[];
+
+
+
+	constructor(
+        private projectsService: ProjectsService,
+        private route: ActivatedRoute
+    ){};
+
+    ngOnInit():void{
+        this.route.params.forEach((params: Params) => {
+            let id = +params['id'];
+            this.projectsService.getHighchartsData(id).then(hData => {
+                console.log(hData);
+                this.initializeHighcharts(hData);
+            });
+        });
+    };
+
+    initializeHighcharts(hData):void{
+        console.log(hData);
+        this.options = {
+            title : {
                 text : 'Финансирование, млн. руб',
                 align: 'left',
                 style:{
@@ -17,10 +39,10 @@ export class HChartComponent {
                     fontSize: '20px',
                     fontWeight: 'bold',
                 }
-			},
-			credits: {
-				enabled: false
-			},
+            },
+            credits: {
+                enabled: false
+            },
             legend:{
                 align: 'left',
                 verticalAlign: 'top',
@@ -29,17 +51,17 @@ export class HChartComponent {
                 x: 100,
                 symbolRadius: 0
             },
-			chart: {
-				type: 'column'
-			},
-			xAxis: {
-				categories: [2014,2015,2016, 2017],
+            chart: {
+                type: 'column'
+            },
+            xAxis: {
+                categories: hData.categories,
                 labels: {
                     style:{
                         fontSize: '20px'
                     }
                 }
-			},
+            },
             yAxis: {
                 labels:{
                     format: '{value}',
@@ -51,15 +73,10 @@ export class HChartComponent {
                     text: ''
                 }
             },
-			series: [{
-                name: 'План',
-				data: [16000, 17000, 13000, 37000],
-                color: 'blue'
-			},{
-                name: 'Факт',
-                data: [15000, 15000, 0, 0],
-                color : 'green'
-            }]
-		};
-	}
+            series: hData.series
+        };
+    };
+
 }
+
+

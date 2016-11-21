@@ -13,9 +13,9 @@
       "investmentsSumCurrency": "млрд руб.",
       "paybackSumValue": 4.8,
       "paybackSumCurrency": "лет",
-      "normalSumValue": 4.8,
-      "normalSumCurrency": "лет",
-      "periodSumValue": 4.8,
+      "normalSumValue": 35,
+      "normalSumCurrency": "%",
+      "periodSumValue": 5.9,
       "periodSumCurrency": "лет",
       "descriptions": [
         "Строительство (2011-2018)",
@@ -49,23 +49,41 @@
           }
         ],
         "links": []
+      },
+      "hData":{
+        "categories":[2014,2015,2016,2017],
+        "series":[
+            {
+              "name": "План",
+              "data": [16000,13000,17000,37000],
+              "color": "blue"
+            },{
+              "name": "Факт",
+              "data": [15000,15000,0,0],
+              "color": "green"
+            }
+        ]
       }
     },
     {
       "id": 12,
-      "name": "Разработка 2",
-      "region": "Еврейская автономная область",
-      "initiators": [],
+      "name": "Семенной завод в Амурской области",
+      "region": "Амурская область",
+      "initiators": ["ООО \"Амур Агро Холдинг\""],
       "industry": "Недра (Графитовая промышленность)",
-      "investmentsSumValue": 4.7,
+      "investmentsSumValue": 1.6,
       "investmentsSumCurrency": "млрд руб.",
-      "paybackSumValue": 4.8,
+      "paybackSumValue": 7.3,
       "paybackSumCurrency": "лет",
-      "normalSumValue": 4.8,
-      "normalSumCurrency": "лет",
+      "normalSumValue": 12,
+      "normalSumCurrency": "%",
       "periodSumValue": 4.8,
       "periodSumCurrency": "лет",
-      "descriptions": [],
+      "descriptions": [
+        "Семенной завод 2014-2015",
+        "Вспомогательное хозяйство(2016-2016",
+        "Энергетический и транспортный комплекс(2015-2015)"
+      ],
       "coordinates": [
         30.6558,
         55.6173
