@@ -1,6 +1,7 @@
 import {Component, OnInit, Input, OnChanges, SimpleChanges, ViewEncapsulation, EventEmitter} from '@angular/core';
 import { Project } from  './project';
 import * as ol from 'openlayers';
+import {isUndefined} from "util";
 
 @Component({
 	selector: "olmap",
@@ -15,11 +16,12 @@ export class OlMap implements OnInit, OnChanges{
 		if (value){
 			this._selectedProject = value;
 			this.centerOnProject(value);
+			console.log(value);
 		}
 	}
 	@Input()
 	set projects(value: Project[]) {
-		if (value){
+		if (value && value[0]!=undefined){
 			this._projects = value;
 			this.redrawFeatures();
 			this.extentToFeatures();
