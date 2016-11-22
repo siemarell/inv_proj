@@ -16,7 +16,8 @@ export class ProjectDetailComponent implements OnInit{
 	ngOnInit(): void {
 		this.route.params.forEach((params: Params) => {
 			let id = +params['id'];
-			this.projectsService.getProject(id).then(project => this.project = project)
+			this.projectsService.getProject(id).then(project => this.project = project);
+			console.log(this.project);
 		})
 	}
 	goBack(): void {
