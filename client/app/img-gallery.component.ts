@@ -7,10 +7,10 @@ import {Project} from "./project";
 	template: `
 <div class="row" (click)="lgModal.show()">
 	<div class="col-md-6" style="padding: 0px 7px 0px 0px; margin: 0px 0px 7px 0px">
-		<img src="../images/img-bottom-right.png" style="height: 25%;width: 100%">
+		<img [src]="slides[0].image" style="height: 25%;width: 100%" *ngIf="slides[0]">
 	</div>
 	<div class="col-md-6" style="padding: 0px 0px 0px 7px; margin: 0px 0px 7px 0px">
-		<img src="../images/img-top-right.png" style="height: 25%;width: 100%">
+		<img [src]="slides[1].image" style="height: 25%;width: 100%" *ngIf="slides[1]">
 	</div>
 </div>
  
@@ -38,11 +38,6 @@ import {Project} from "./project";
     </div>
   </div>
 </div>
-<!--<video width="352" height="198" controls>
-    <source src="http://live.netd.com.tr/S1/HLS_LIVE/dreamtv/index.m3u8" type="application/x-mpegURL">
-</video>
-<object type="application/x-shockwave-flash" id="movie" name="movie" data="http://www.zonytvcom.info/saki2/player/player-licensed.swf" width="960" height="570">
-</object>-->
 `
 	
 })
