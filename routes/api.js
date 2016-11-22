@@ -7,6 +7,14 @@ router.get('/projects', function(req, res, next) {
     res.json(db.getProjects());
 });
 
+router.get('/projects/types',function (req, res, next) {
+   res.json(db.getTypes());
+});
+
+router.get('/projects/types/:type',function (req, res, next) {
+    res.json(db.getProjectsByType(req.params["type"]));
+});
+
 router.get('/projects/:id/hchart', function(req, res, next) {
     res.json(db.getHData(req.params["id"]));
 });

@@ -10,9 +10,29 @@ Database.prototype.getProjects = function () {
 };
 
 Database.prototype.getTasks = function (projectId) {
-    var data = this.data.projects.filter( x => x.id == projectId);
+    var data = this.data.projects.filter( project => project.id == projectId);
     if (data) return data[0].tasks;
     return [];
+};
+
+Database.prototype.getProjectsByType = function(projectType){
+    if (projectType == 'any'){
+        return this.data.projects;
+    }
+    else{
+        return this.data.projects.filter(project => project.type == projectType);
+    }
+};
+
+Database.prototype.getTypes = function () {
+    return this.data.projects
+        .map(function (item) {
+            return item.type;
+        })
+        .filter((value, index, self)=>self.indexOf(value) === index);
+    // var unique = data.filter(function(value, index, self) {
+    //     return self.indexOf(value) === index;
+    // } );
 };
 
 Database.prototype.getHData = function (projectId) {

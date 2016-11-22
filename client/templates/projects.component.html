@@ -3,8 +3,9 @@
         <div class="head-name">Инвестиционные проекты</div>
         <div class="filters-container">
             <div class="inner-filters-container">
-                <select class="select-tab">
-                    <option>Все категории</option>
+                <select class="select-tab" (change) = "onChange($event)">
+                    <option value = "any">Все проекты</option>
+                    <option *ngFor="let ptype of projectTypes | async" value= "{{ptype}}">{{ptype}}</option>
                 </select>
             </div>
         </div>
@@ -15,11 +16,11 @@
             </div>
             <div class="ind">
                 <i class="fa fa-check-circle" aria-hidden="true" style="color: #20b052"></i>
-                3
+                {{normalProjects}}
             </div>
             <div class="ind">
                 <i class="fa fa-exclamation-circle" aria-hidden="true" style="color: #890511"></i>
-                2
+                {{delayedProjects}}
             </div>
         </div>
         <div class="projects-container">

@@ -29,6 +29,20 @@ export class ProjectsService {
 			.catch(this.handleError);
 	}
 
+	getProjectTypes(): Promise<string[]>{
+		return this.http.get(this.projectsUrl + "/types")
+			.toPromise()
+			.then(response => response.json() as string[])
+			.catch(this.handleError);
+	}
+
+	getProjectByType(pojectType : string): Promise<Project[]>{
+		return this.http.get(this.projectsUrl + '/types/' + pojectType)
+			.toPromise()
+			.then(response => response.json() as Project[])
+			.catch(this.handleError);
+	}
+
 	getHighchartsData(projectId : number): Promise<HighchartsData[]>{
 		return this.http.get(this.projectsUrl + "/" + projectId + "/hchart")
 			.toPromise()

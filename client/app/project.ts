@@ -15,5 +15,7 @@ export interface Project {
 	descriptions: string[];
 	coordinates?: [number,number];
 	images?: string[],
-	stream?: string
+	stream?: string,
+	type: string,
+	delayed: boolean
 }
