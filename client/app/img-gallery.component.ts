@@ -49,7 +49,7 @@ export class ImageGallery implements OnChanges{
 	//@ViewChild('lgModal') public childModal:any;
 	public constructor() {
 		//this.addSlide('../images/img-bottom-right.png');
-		//this.addSlide('../images/img-top-right.png');
+		//this.addSlide('../images/img-top-right.png'[];);
 
 	}
 
@@ -57,11 +57,13 @@ export class ImageGallery implements OnChanges{
 	ngOnChanges(changes: SimpleChanges): void {
 		if (changes['project'] && !changes['project'].isFirstChange()){
 			this.slides = [];
-			for (let image of this.project.images) {
-				this.addSlide(image);
-				console.log(image);
+			if (this.project.hasOwnProperty('images')){
+				this.slides = [];
+				for (let image of this.project.images) {
+					this.addSlide(image);
+					console.log(image);
+				}
 			}
-
 		}
 	}
 
