@@ -93,6 +93,9 @@
         129.1106,
         50.3801
       ],
+      "images": [
+        "../images/Фото1инвест2.png",
+        "../images/Фото2инвест2.png"],
       "tasks":
       {
         "data": [
@@ -181,6 +184,9 @@
         124.7327,
         56.6635
       ],
+      "images": [
+        "../images/Фото3инвест3.png",
+        "../images/Фото2инвест3.png"],
       "tasks":
       {
         "data": [
@@ -188,42 +194,42 @@
             "id": 1,
             "text": "Строительство 2 цеха для откорма бройлеров",
             "start_date": "01-05-2016",
-            "duration": 11,
+            "duration": 20,
             "progress": 1,
             "open": true
           },{
             "id": 2,
             "text": "Строительство 3 цеха",
-            "start_date": "04-05-2016",
-            "duration": 5,
+            "start_date": "11-05-2016",
+            "duration": 60,
             "progress": 0.3,
             "open": true
           },{
             "id": 3,
             "text": "Строительство 4 цеха",
-            "start_date": "04-05-2016",
-            "duration": 5,
+            "start_date": "30-05-2016",
+            "duration": 12,
             "progress": 0.15,
             "open": true
           },{
             "id": 4,
             "text": "Строительство инкубатора",
-            "start_date": "04-05-2016",
-            "duration": 5,
+            "start_date": "10-06-2016",
+            "duration": 20,
             "progress": 0.2,
             "open": true
           },{
             "id": 5,
             "text": "Инженерные сети",
-            "start_date": "04-05-2016",
-            "duration": 5,
+            "start_date": "30-06-2016",
+            "duration": 35,
             "progress": 0.1,
             "open": true
           },{
             "id": 6,
             "text": "Инженерные сети",
-            "start_date": "04-05-2016",
-            "duration": 5,
+            "start_date": "30-07-2016",
+            "duration": 45,
             "progress": 0.9,
             "open": true
           }
