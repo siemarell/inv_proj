@@ -96,6 +96,7 @@
       "images": [
         "../images/Фото1инвест2.png",
         "../images/Фото2инвест2.png"],
+      "stream": "http://62.117.66.226:5078/axis-cgi/mjpg/video.cgi?resolution=704x576&dummy=1478856081338",
       "tasks":
       {
         "data": [
@@ -187,6 +188,7 @@
       "images": [
         "../images/Фото3инвест3.png",
         "../images/Фото2инвест3.png"],
+      "stream": "http://62.117.66.226:5078/axis-cgi/mjpg/video.cgi?resolution=704x576&dummy=1478856081338",
       "tasks":
       {
         "data": [
