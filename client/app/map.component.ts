@@ -89,7 +89,13 @@ export class OlMap implements OnInit, OnChanges{
 				var feature = new ol.Feature({
 					geometry: new ol.geom.Point(ol.proj.fromLonLat(project.coordinates))
 				});
-				feature.setStyle(Styles.getStyle('icon'));
+				var style;
+				if (project.type == 'Недра'){
+					style = Styles.getStyle('mining');
+				}else {
+					style = Styles.getStyle('agro');
+				}
+				feature.setStyle(style);
 				return feature;
 			});
 		
@@ -139,25 +145,16 @@ export class OlMap implements OnInit, OnChanges{
 
 class Styles {
 	private static styles: {[index: string]: ol.style.Style} = {
-		'route': new ol.style.Style({
-			stroke: new ol.style.Stroke({
-				width: 6, color: [237, 212, 0, 0.8]
-			})
-		}),
-		'icon': new ol.style.Style({
+		'mining': new ol.style.Style({
 			image: new ol.style.Icon({
 				anchor: [0.5, 1],
-				src: 'https://openlayers.org/en/v3.19.1/examples/data/icon.png'
+				src: '../images/icons/mining.png'
 			})
 		}),
-		'geoMarker': new ol.style.Style({
-			image: new ol.style.Circle({
-				radius: 7,
-				snapToPixel: false,
-				fill: new ol.style.Fill({color: 'black'}),
-				stroke: new ol.style.Stroke({
-					color: 'white', width: 2
-				})
+		'agro': new ol.style.Style({
+			image: new ol.style.Icon({
+				anchor: [0.5, 1],
+				src: '../images/icons/agro.png'
 			})
 		})
 	};
