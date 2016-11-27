@@ -1,7 +1,3 @@
-/**
- * Created by kovalev on 16.11.2016.
- */
-
 export interface Task {
     id: number;
     text: string;

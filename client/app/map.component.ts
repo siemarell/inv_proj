@@ -130,7 +130,7 @@ export class OlMap implements OnInit, OnChanges{
 	}
 	
 	private centerOnProject(project: Project): void{
-		if (!project.hasOwnProperty('coordinates')){
+		if (!Object.hasOwnProperty.call(project,'coordinates')){
 			console.log('project has no coordinates');
 			return;
 		}

@@ -1,11 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Project} from "./project";
-import { ProjectsService } from './projects.service'
-import { ProjectSearchService } from './project-search.service'
-import { Router } from '@angular/router'
+import { ProjectsService } from './projects.service';
+import { Router } from '@angular/router';
 
 @Component({
-    selector: 'my-heroes',
+    selector: 'my-projects',
     templateUrl: 'templates/projects.component.html',
     styleUrls: ['styles/projects.component.css']
 })
