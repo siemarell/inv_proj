@@ -49,7 +49,10 @@ export class HChartComponent implements OnInit{
                 itemMarginTop: 30,
                 itemMarginBottom: 10,
                 x: 100,
-                symbolRadius: 0
+                symbolRadius: 0,
+                itemStyle:{
+                    fontSize: '20px'
+                }
             },
             chart: {
                 type: 'column'
