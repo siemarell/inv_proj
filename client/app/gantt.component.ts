@@ -92,7 +92,7 @@ export class GanttComponent implements OnInit, OnChanges{
         ];
 
         var date_to_str = gantt.date.date_to_str(gantt.config.task_date);
-        var today = new Date();
+        var today = new Date(2016,10,29);
         //var today = new Date();
         console.log(today);
         gantt.addMarker({
