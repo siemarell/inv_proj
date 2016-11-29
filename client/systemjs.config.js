@@ -29,7 +29,8 @@
             'highcharts': 'npm:highcharts',
             'angular2-highcharts': 'npm:angular2-highcharts',
             'moment': 'node_modules/moment/moment.js',
-            'ng2-bootstrap/ng2-bootstrap': 'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js'
+            'ng2-bootstrap/ng2-bootstrap': 'node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
+            'primeng': 'npm:primeng'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -55,6 +56,9 @@
             },
             'highcharts': {
                 main: './highcharts.src.js',
+                defaultExtension: 'js'
+            },
+            primeng: {
                 defaultExtension: 'js'
             }
         }

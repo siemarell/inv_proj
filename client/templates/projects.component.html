@@ -1,14 +1,16 @@
 <div id="wrapper">
     <div id="left">
         <div class="head-name">Инвестиционные проекты</div>
-        <div class="filters-container">
-            <div class="inner-filters-container">
-                <select class="select-tab" (change) = "onChange($event)">
-                    <option value = "any">Все проекты</option>
-                    <option *ngFor="let ptype of projectTypes | async" value= "{{ptype}}">{{ptype}}</option>
-                </select>
-            </div>
-        </div>
+        <!--<div class="filters-container">-->
+            <!--<div class="inner-filters-container">-->
+                <!--<select class="select-tab" (change) = "onChange($event)">-->
+                    <!--<option value = "any">Все проекты</option>-->
+                    <!--<option *ngFor="let ptype of projectTypes | async" value= "{{ptype}}">{{ptype}}</option>-->
+                <!--</select>-->
+            <!--</div>-->
+        <!--</div>-->
+        <p-dropdown [options]="projectTypes" [(ngModel)]="selectedType" class="filters-container"></p-dropdown>
+
         <div class="indicators-container">
             <div class="ind">
                 <i class="fa fa-circle" aria-hidden="true" style="color: #1211f3"></i>

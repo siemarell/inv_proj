@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Project} from "./project";
 import { ProjectsService } from './projects.service';
 import { Router } from '@angular/router';
+import {SelectItem} from 'primeng/primeng';
 
 @Component({
     selector: 'my-projects',
@@ -12,7 +13,9 @@ export class ProjectsComponent implements OnInit{
     
     projects: Project[];
     selectedProject: Project;
-    projectTypes: Promise<string[]>;
+    projectTypes : SelectItem[];
+    selectedType: string;
+    //projectTypes: Promise<string[]>;
     selectedItem : string;
     get delayedProjects(): number {
         if (this.projects){
@@ -32,12 +35,19 @@ export class ProjectsComponent implements OnInit{
     constructor(
     	private projectsService: ProjectsService,
         private router: Router
-    ){}
+    ){
+        this.projectTypes = [];
+
+    }
     
     ngOnInit(): void {
         this.getProjects();
-        this.projectTypes = this.projectsService.getProjectTypes();//.then(typeOfProjects => {console.log(typeOfProjects);this.projectTypes = typeOfProjects});
-        console.log(this.projectTypes);
+        this.projectTypes.push({label: 'все типы', value: 'все типы'});
+        this.projectsService.getProjectTypes()
+            .then(typesOfProjects => {
+                    typesOfProjects.forEach(typeOfProjects => this.projectTypes.push({label: typeOfProjects, value: typeOfProjects}))
+                });
+        //console.log(this.projectTypes);
     }
 
     onChange($event){

@@ -18,6 +18,7 @@ import { HChartComponent } from './hchart.component';
 import { CarouselModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { ImageGallery } from "./img-gallery.component";
 import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
+import {DropdownModule} from 'primeng/primeng';
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
 	    ChartModule,
 	    AppRoutingModule,
 	    CarouselModule,
-	    ModalModule
+	    ModalModule,
+	    DropdownModule
     ],
     declarations: [
         AppComponent,
