@@ -25,6 +25,7 @@
             'rxjs':                      'npm:rxjs',
             'openlayers': 'npm:openlayers/dist/ol.js',
             'dhtmlxgantt': 'npm:dhtmlx-gantt/codebase/dhtmlxgantt.js',
+            'dhtmlxgantt_marker': 'npm:dhtmlx-gantt/codebase/ext/dhtmlxgantt_marker.js',
             'highcharts': 'npm:highcharts',
             'angular2-highcharts': 'npm:angular2-highcharts',
             'moment': 'node_modules/moment/moment.js',
@@ -43,6 +44,9 @@
                 defaultExtension: 'js'
             },
             "dhtmlxgantt": {
+                defaultExtension: 'js'
+            },
+            "dhtmlxgantt_marker": {
                 defaultExtension: 'js'
             },
             'angular2-highcharts': {

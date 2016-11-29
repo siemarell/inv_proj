@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewEncapsulation, OnChanges, SimpleChanges} from '@angular/core';
 import 'dhtmlxgantt';
+import 'dhtmlxgantt_marker'
 import {ProjectsService} from "./projects.service";
 import {Task} from "./task";
 import {Router} from "@angular/router";
@@ -66,7 +67,6 @@ export class GanttComponent implements OnInit, OnChanges{
 
 	createGantt(tasks): void{
 
-        //console.log(tasks);
         gantt.config.columns = [
             {
                 name: "progress",
@@ -91,10 +91,20 @@ export class GanttComponent implements OnInit, OnChanges{
             }
         ];
 
+        var date_to_str = gantt.date.date_to_str(gantt.config.task_date);
+        var today = new Date();
+        //var today = new Date();
+        console.log(today);
+        gantt.addMarker({
+            start_date: today,
+            css: "today",
+            text: "Сегодня",
+            title:"Сегодня: "+ date_to_str(today)
+        });
 
         gantt.config.scale_unit = "month";
         gantt.config.date_scale = "%d.%m";
-        gantt.config.show_progress = false;
+        gantt.config.show_progress = true;
 
         gantt.templates.task_text = function (start, end, task) {
             return '';

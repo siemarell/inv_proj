@@ -38,42 +38,42 @@
           {
             "id": 1,
             "text": "Подготовительные работы",
-            "start_date": "20-05-2016",
+            "start_date": "20-08-2016",
             "duration": 80,
             "progress": 0.6,
             "open": true
           },{
             "id": 2,
             "text": "Монтаж металлоконструкций",
-            "start_date": "01-06-2016",
+            "start_date": "01-09-2016",
             "duration": 60,
             "progress": 1,
             "open": true
           },{
             "id": 3,
             "text": "Устройство монолитных перегородок",
-            "start_date": "15-06-2016",
+            "start_date": "15-09-2016",
             "duration": 60,
             "progress": 1,
             "open": true
           },{
             "id": 4,
             "text": "Устройство ограждающих",
-            "start_date": "01-07-2016",
+            "start_date": "01-10-2016",
             "duration": 80,
             "progress": 0.1,
             "open": true
           },{
             "id": 5,
             "text": "Водоснабжение, канализация",
-            "start_date": "01-08-2016",
+            "start_date": "01-11-2016",
             "duration": 50,
             "progress": 0.3,
             "open": true
           },{
             "id": 6,
             "text": "Отопление",
-            "start_date": "04-05-2016",
+            "start_date": "30-11-2016",
             "duration": 50,
             "progress": 0.1,
             "open": true
@@ -131,42 +131,42 @@
           {
             "id": 1,
             "text": "Закупка строительных метериалов",
-            "start_date": "01-05-2016",
+            "start_date": "01-09-2016",
             "duration": 20,
             "progress": 1,
             "open": true
           },{
             "id": 2,
             "text": "Строительство основного энерге блока",
-            "start_date": "11-05-2016",
+            "start_date": "11-09-2016",
             "duration": 20,
             "progress": 1,
             "open": true
           },{
             "id": 3,
             "text": "Строительство резервного энерго блока",
-            "start_date": "30-05-2016",
+            "start_date": "30-09-2016",
             "duration": 60,
             "progress": 1,
             "open": true
           },{
             "id": 4,
             "text": "Формирование энерге инфраструкруты",
-            "start_date": "10-06-2016",
+            "start_date": "10-10-2016",
             "duration": 20,
             "progress": 1,
             "open": true
           },{
             "id": 5,
             "text": "Строительство комбикормового завода",
-            "start_date": "30-06-2016",
+            "start_date": "30-10-2016",
             "duration": 15,
             "progress": 0.2,
             "open": true
           },{
             "id": 6,
             "text": "Предприятие по глубокой переработке сои",
-            "start_date": "30-06-2016",
+            "start_date": "30-11-2016",
             "duration": 25,
             "progress": 0,
             "open": true
@@ -223,42 +223,42 @@
           {
             "id": 1,
             "text": "Строительство 2 цеха для откорма",
-            "start_date": "01-05-2016",
+            "start_date": "01-10-2016",
             "duration": 20,
             "progress": 1,
             "open": true
           },{
             "id": 2,
             "text": "Строительство 3 цеха",
-            "start_date": "11-05-2016",
+            "start_date": "11-10-2016",
             "duration": 60,
             "progress": 0.3,
             "open": true
           },{
             "id": 3,
             "text": "Строительство 4 цеха",
-            "start_date": "30-05-2016",
+            "start_date": "30-10-2016",
             "duration": 12,
             "progress": 0.15,
             "open": true
           },{
             "id": 4,
             "text": "Строительство инкубатора",
-            "start_date": "10-06-2016",
+            "start_date": "10-11-2016",
             "duration": 20,
             "progress": 0.2,
             "open": true
           },{
             "id": 5,
             "text": "Инженерные сети",
-            "start_date": "30-06-2016",
+            "start_date": "30-11-2016",
             "duration": 35,
             "progress": 0.1,
             "open": true
           },{
             "id": 6,
             "text": "Инженерные сети",
-            "start_date": "30-07-2016",
+            "start_date": "30-12-2016",
             "duration": 45,
             "progress": 0.9,
             "open": true
