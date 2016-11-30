@@ -19,6 +19,7 @@ import { CarouselModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { ImageGallery } from "./img-gallery.component";
 import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
 import {DropdownModule} from 'primeng/primeng';
+import {TooltipModule} from 'primeng/primeng';
 
 @NgModule({
     imports: [
@@ -29,7 +30,8 @@ import {DropdownModule} from 'primeng/primeng';
 	    AppRoutingModule,
 	    CarouselModule,
 	    ModalModule,
-	    DropdownModule
+	    DropdownModule,
+	    TooltipModule
     ],
     declarations: [
         AppComponent,

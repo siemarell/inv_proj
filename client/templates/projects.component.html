@@ -13,15 +13,15 @@
 
         <div class="indicators-container">
             <div class="ind">
-                <i class="fa fa-circle" aria-hidden="true" style="color: #1211f3"></i>
+                <i class="fa fa-circle" aria-hidden="true" pTooltip="Текущих" tooltipPosition="top" style="color: #1211f3"></i>
                 {{(projects)?.length}}
             </div>
             <div class="ind">
-                <i class="fa fa-check-circle" aria-hidden="true" style="color: #20b052"></i>
+                <i class="fa fa-check-circle" aria-hidden="true" pTooltip="В срок" tooltipPosition="top" style="color: #20b052"></i>
                 {{normalProjects}}
             </div>
             <div class="ind">
-                <i class="fa fa-exclamation-circle" aria-hidden="true" style="color: #890511"></i>
+                <i class="fa fa-exclamation-circle" aria-hidden="true" pTooltip="С нарушением сроков" tooltipPosition="top" style="color: #890511"></i>
                 {{delayedProjects}}
             </div>
         </div>
