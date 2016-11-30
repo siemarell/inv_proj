@@ -73,3 +73,12 @@ hr{
 #clear{
     clear: both;
 }
+
+.ui-dropdown {
+    margin-left: 10px;
+    width: 98% !important;
+}
+
+.ui-dropdown-trigger {
+    padding-right: 6% !important;
+}

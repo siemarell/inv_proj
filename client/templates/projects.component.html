@@ -9,7 +9,7 @@
                 <!--</select>-->
             <!--</div>-->
         <!--</div>-->
-        <p-dropdown [options]="projectTypes" [(ngModel)]="selectedType" class="filters-container"></p-dropdown>
+        <p-dropdown [options]="projectTypes" [(ngModel)]="selectedType" (onChange)="filterProjects($event)"></p-dropdown>
 
         <div class="indicators-container">
             <div class="ind">

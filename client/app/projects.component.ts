@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Project} from "./project";
 import { ProjectsService } from './projects.service';
 import { Router } from '@angular/router';
@@ -6,6 +6,7 @@ import {SelectItem} from 'primeng/primeng';
 
 @Component({
     selector: 'my-projects',
+    encapsulation: ViewEncapsulation.None,
     templateUrl: 'templates/projects.component.html',
     styleUrls: ['styles/projects.component.css']
 })
@@ -16,7 +17,7 @@ export class ProjectsComponent implements OnInit{
     projectTypes : SelectItem[];
     selectedType: string;
     //projectTypes: Promise<string[]>;
-    selectedItem : string;
+    //selectedItem : string;
     get delayedProjects(): number {
         if (this.projects){
             return this.projects.filter(x => x.delayed).length
@@ -42,7 +43,7 @@ export class ProjectsComponent implements OnInit{
     
     ngOnInit(): void {
         this.getProjects();
-        this.projectTypes.push({label: 'все типы', value: 'все типы'});
+        this.projectTypes.push({label: 'все типы', value: 'any'});
         this.projectsService.getProjectTypes()
             .then(typesOfProjects => {
                     typesOfProjects.forEach(typeOfProjects => this.projectTypes.push({label: typeOfProjects, value: typeOfProjects}))
@@ -50,9 +51,10 @@ export class ProjectsComponent implements OnInit{
         //console.log(this.projectTypes);
     }
 
-    onChange($event){
-        this.selectedItem = $event.target.value;
-        this.projectsService.getProjectByType(this.selectedItem)
+    filterProjects($event){
+        //console.log($event);
+        //this.selectedItem = $event.target.value;
+        this.projectsService.getProjectByType(this.selectedType)
             .then(projects => this.projects = projects);
     };
     
