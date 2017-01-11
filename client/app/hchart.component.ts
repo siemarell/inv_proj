@@ -5,7 +5,7 @@ import { ActivatedRoute, Params} from '@angular/router';
 
 @Component({
 	selector: 'detail-page-chart',
-	template: `	<chart [options]="options" class="col-md-12" style="height: 100%;"></chart>`
+	template: `	<chart [options]="options" class="col-md-12" style="height: 100%;padding: 0 0 0 0"></chart>`
 })
 export class HChartComponent implements OnInit{
 	options: Object;
